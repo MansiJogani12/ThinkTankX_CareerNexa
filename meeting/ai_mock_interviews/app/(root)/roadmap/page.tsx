@@ -447,6 +447,7 @@ export default function RoadmapPage() {
                         <CheckCircle size={12} />
                         {item.completed ? "Mark Incomplete" : "Mark as Completed"}
                       </button>
+                    </div>
                   </div>
                 </div>
               ))}
