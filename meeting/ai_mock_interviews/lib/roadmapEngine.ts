@@ -60,7 +60,7 @@ export async function analyzeSkillGap(dna: SkillDNA, targetRole: string) {
     // LLM Fallback for unrecognized custom roles
     try {
       const { object } = await generateObject({
-        model: google("gemini-1.5-flash", { structuredOutputs: true }),
+        model: google("gemini-2.5-flash", { structuredOutputs: true }),
         schema: z.object({
           requiredSkills: z.array(z.string()).describe("6 to 8 core technical and soft skills required for this job role.")
         }),
@@ -129,7 +129,7 @@ export async function generateAdaptiveRoadmap(
   // Attempt Gemini generation for rich difficulty & timeframe specific roadmap
   try {
     const { object } = await generateObject({
-      model: google("gemini-1.5-flash", { structuredOutputs: false }),
+      model: google("gemini-2.5-flash", { structuredOutputs: false }),
       schema: z.object({
         roadmap: z.array(
           z.object({
