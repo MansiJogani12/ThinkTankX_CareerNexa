@@ -96,6 +96,56 @@ export async function signOut() {
   cookieStore.delete("session");
 }
 
+// Sign out user and purge all stored data for this user (resumes, interviews, roadmaps, feedback)
+export async function purgeUserDataAndSignOut(userId?: string) {
+  try {
+    const cookieStore = await cookies();
+    const sessionCookie = cookieStore.get("session")?.value;
+
+    let uidToPurge = userId;
+    if (!uidToPurge && sessionCookie) {
+      try {
+        const decodedClaims = await auth.verifySessionCookie(sessionCookie, true);
+        uidToPurge = decodedClaims.uid;
+      } catch (e) {
+        console.error("Could not verify session during purge:", e);
+      }
+    }
+
+    if (uidToPurge) {
+      const collectionsToClean = [
+        "interviews",
+        "feedback",
+        "resumes",
+        "saved_resumes",
+        "roadmaps",
+        "analyses",
+        "user_data",
+      ];
+
+      for (const collName of collectionsToClean) {
+        try {
+          const snapshot = await db.collection(collName).where("userId", "==", uidToPurge).get();
+          if (!snapshot.empty) {
+            const batch = db.batch();
+            snapshot.docs.forEach((doc) => {
+              batch.delete(doc.ref);
+            });
+            await batch.commit();
+          }
+        } catch (err) {
+          console.warn(`Error clearing collection ${collName} for user ${uidToPurge}:`, err);
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Error during user data purge:", error);
+  } finally {
+    const cookieStore = await cookies();
+    cookieStore.delete("session");
+  }
+}
+
 // Get current user from session cookie
 export async function getCurrentUser(): Promise<User | null> {
   const cookieStore = await cookies();

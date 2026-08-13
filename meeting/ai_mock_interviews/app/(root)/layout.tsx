@@ -3,12 +3,13 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import { redirect } from "next/navigation";
 
-import { isAuthenticated } from "@/lib/actions/auth.action";
+import { getCurrentUser } from "@/lib/actions/auth.action";
 import { MentorChat } from "@/components/MentorChat";
+import { UserNav } from "@/components/UserNav";
 
 const Layout = async ({ children }: { children: ReactNode }) => {
-  const isUserAuthenticated = await isAuthenticated();
-  if (!isUserAuthenticated) redirect("/sign-in");
+  const user = await getCurrentUser();
+  if (!user) redirect("/sign-in");
 
   return (
     <div className="root-layout">
@@ -18,7 +19,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
           <h2 className="text-violet-500 font-bold text-xl">CareerNexa</h2>
         </Link>
 
-        <div className="hidden md:flex items-center gap-5 flex-wrap">
+        <div className="hidden lg:flex items-center gap-5 flex-wrap">
           <Link href="/analyse" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Analyse</Link>
           <Link href="/skill-gap" className="text-sm font-medium text-white/70 hover:text-white transition-colors">SkillGap</Link>
           <Link href="/roadmap" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Roadmap</Link>
@@ -31,9 +32,9 @@ const Layout = async ({ children }: { children: ReactNode }) => {
           <Link href="/interview" className="text-sm font-medium text-white/70 hover:text-white transition-colors">MockInterview</Link>
           <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">About</Link>
         </div>
-        
-        {/* Placeholder for right side to balance flex layout */}
-        <div className="w-32 hidden md:block"></div>
+
+        {/* User Profile & Logout Component in Corner */}
+        <UserNav user={user} />
       </nav>
 
       {children}
