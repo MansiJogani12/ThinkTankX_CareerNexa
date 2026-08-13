@@ -2,7 +2,8 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || "" });
+const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY || "";
+const ai = new GoogleGenAI({ apiKey });
 
 // Helper to parse individual questions if questions array contains concatenated/bulleted text
 function parseIndividualQuestions(questions?: string[]): string[] {
@@ -51,14 +52,15 @@ export async function getInterviewerResponse(
 
   // If candidate has answered all questions, conclude the session
   if (userTurns >= qList.length) {
-    return "Thank you for your time! That concludes our interview session today. We will generate your feedback report now.";
+    return "Thank you for your time! That concludes our interview session today. We will generate your detailed feedback report now.";
   }
 
   const currentQuestion = qList[userTurns];
   const fallbackResponse = `Thank you for sharing. Next question: ${currentQuestion}`;
 
   try {
-    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    const activeKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
+    if (!activeKey) {
       return fallbackResponse;
     }
 
@@ -66,22 +68,23 @@ export async function getInterviewerResponse(
 
     const systemPrompt =
       type === "generate"
-        ? `You are a friendly AI career coach helping a candidate prepare for interviews. 
-Ask them about their background, skills, and career goals in a conversational way.
-Keep ALL responses under 2-3 sentences. Ask ONLY ONE question at a time.`
-        : `You are a professional job interviewer conducting a real-time interview.
+        ? `You are a friendly, encouraging AI career coach helping a candidate prepare for interviews.
+Evaluate the candidate's last response:
+- If their answer is correct, accurate, or well-structured, praise them specifically (e.g., "Spot on!", "Great explanation! You're right that...").
+- If their answer is incorrect, weak, or incomplete, give immediate constructive feedback or a brief correction (e.g., "Good try, but actually...", "That's partially correct, however...").
+Then ask a follow-up question. Keep your total response under 3 sentences maximum.`
+        : `You are a sharp, expert technical interviewer conducting a real-time mock interview.
 
-Here is the master list of interview questions:
+Master List of Questions:
 ${questionsListStr}
 
-CRITICAL RULE:
-You MUST ONLY ask question #${userTurns + 1} right now: "${currentQuestion}".
-DO NOT ask any other questions from the list yet.
-
-Instructions:
-1. Briefly acknowledge the candidate's previous response in 1 short sentence.
-2. Ask question #${userTurns + 1}: "${currentQuestion}".
-3. Keep your total response under 3 sentences maximum.`;
+CRITICAL RULES:
+1. EVALUATE THE CANDIDATE'S LAST RESPONSE DYNAMICALLY:
+   - If the candidate's answer is ACCURATE / CORRECT / STRONG: Praise them directly and highlight why it was good (e.g., "Spot on!", "Great answer!", "That is correct!", "Excellent point about...").
+   - If the candidate's answer is INCORRECT / WEAK / INCOMPLETE: Politely explain what was wrong or missing and provide the correct approach before proceeding (e.g., "That's a common misconception, but actually...", "Not quite. A better approach would be...", "You're on the right track, but don't forget...").
+2. ASK THE NEXT QUESTION:
+   - Next, state question #${userTurns + 1}: "${currentQuestion}".
+3. Keep your total response concise (2-4 sentences max). Do NOT ramble.`;
 
     const contents = conversationHistory.map((msg) => ({
       role: msg.role === "assistant" ? "model" : "user",
@@ -96,8 +99,8 @@ Instructions:
         contents,
       });
       responseText = response.text?.trim() || "";
-    } catch {
-      // Secondary fallback
+    } catch (err) {
+      console.warn("Primary gemini-2.5-flash failed, trying gemini-2.0-flash fallback:", err);
       const response = await ai.models.generateContent({
         model: "gemini-2.0-flash",
         systemInstruction: systemPrompt,

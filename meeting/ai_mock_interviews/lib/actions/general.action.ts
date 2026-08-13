@@ -2,9 +2,15 @@
 
 import { generateObject } from "ai";
 import { google } from "@ai-sdk/google";
+import { GoogleGenAI } from "@google/genai";
 
 import { db } from "@/firebase/admin";
 import { feedbackSchema } from "@/constants";
+
+// Ensure environment variable fallback
+if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY && process.env.GEMINI_API_KEY) {
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY = process.env.GEMINI_API_KEY;
+}
 
 export async function createFeedback(params: CreateFeedbackParams) {
   const { interviewId, userId, transcript, feedbackId } = params;
@@ -23,70 +29,110 @@ export async function createFeedback(params: CreateFeedbackParams) {
     const formattedTranscript = transcript
       .map(
         (sentence: { role: string; content: string }) =>
-          `- ${sentence.role}: ${sentence.content}\n`
+          `- ${sentence.role.toUpperCase()}: ${sentence.content}\n`
       )
       .join("");
 
     if (!formattedTranscript || transcript.length < 2) {
-      throw new Error("Transcript is empty or too short. Generating mock feedback.");
+      throw new Error("Transcript is empty or too short to generate feedback.");
     }
 
-    const { object } = await generateObject({
-      model: google("gemini-2.5-flash", {
-        structuredOutputs: false,
-      }),
-      schema: feedbackSchema,
-      prompt: `
-        You are an AI interviewer analyzing a mock interview. Your task is to evaluate the candidate based on structured categories. Be thorough and detailed in your analysis. Don't be lenient with the candidate. If there are mistakes or areas for improvement, point them out.
-        Role: ${role}
-        Transcript:
-        ${formattedTranscript}
+    const promptText = `
+      You are a expert technical interviewer analyzing a candidate's mock interview performance. 
+      Analyze the exact answers provided by the user in the transcript below.
+      Role: ${role}
+      
+      TRANSCRIPT:
+      ${formattedTranscript}
 
-        Please score the candidate from 0 to 100 in the following areas. Do not add categories other than the ones provided:
-        1. **Communication Skills**: Clarity, articulation, structured responses.
-        2. **Technical Knowledge**: Understanding of key concepts for the role.
-        3. **Answer Quality**: Structure, accuracy, and depth of the answers.
-        4. **Confidence and Clarity**: Confidence in responses, engagement, and clarity.
+      Be rigorous and accurate. Evaluate their actual technical accuracy, communication clarity, answer quality, and confidence.
+      If the candidate gave incorrect or weak answers, explicitly mention them in weaknesses and areas for improvement.
+    `;
 
-        Ensure that the following fields are generated:
-        - **totalScore**: Overall score between 0 and 100.
-        - **categoryScores**: An array containing objects for each of the 4 categories above with 'name', 'score', and 'comment'.
-        - **strengths**: An array of 2-4 key strengths.
-        - **weaknesses**: An array of 2-4 key weaknesses.
-        - **areasForImprovement**: An array of 2-3 key technical or behavioral areas that need improvement.
-        - **improvementSuggestions**: An array of 2-3 actionable tips to improve interview performance.
-        - **recommendedTopics**: An array of 3-5 specific topics to practice.
-        - **finalAssessment**: A brief 3-4 sentence overall summary of their performance.
-        `,
-      system:
-        "You are a professional interviewer analyzing a mock interview. Your task is to evaluate the candidate based on structured categories",
-    });
+    let feedbackObj: any = null;
 
-    const feedback = {
-      interviewId: interviewId,
-      userId: userId,
-      totalScore: object.totalScore,
-      categoryScores: object.categoryScores,
-      strengths: object.strengths,
-      weaknesses: object.weaknesses || [],
-      areasForImprovement: object.areasForImprovement,
-      improvementSuggestions: object.improvementSuggestions || [],
-      recommendedTopics: object.recommendedTopics || [],
-      finalAssessment: object.finalAssessment,
-      createdAt: new Date().toISOString(),
-    };
+    // Primary Attempt: generateObject via Vercel AI SDK
+    try {
+      const { object } = await generateObject({
+        model: google("gemini-2.5-flash", {
+          structuredOutputs: false,
+        }),
+        schema: feedbackSchema,
+        prompt: promptText,
+        system:
+          "You are a professional interviewer analyzing a mock interview. Evaluate the candidate thoroughly based on their specific responses.",
+      });
+      feedbackObj = object;
+    } catch (sdkError) {
+      console.warn("Vercel AI SDK generateObject failed, attempting GoogleGenAI direct JSON call:", sdkError);
 
-    let feedbackRef;
+      // Fallback Attempt: Direct GoogleGenAI SDK call
+      try {
+        const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY || "";
+        const genAI = new GoogleGenAI({ apiKey });
 
-    if (feedbackId) {
-      feedbackRef = db.collection("feedback").doc(feedbackId);
-    } else {
-      feedbackRef = db.collection("feedback").doc();
+        const response = await genAI.models.generateContent({
+          model: "gemini-2.5-flash",
+          contents: [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: `${promptText}\n\nReturn ONLY a valid JSON object matching this structure:\n{
+                    "totalScore": number (0-100),
+                    "categoryScores": [
+                      { "name": "Communication Skills", "score": number, "comment": "string" },
+                      { "name": "Technical Knowledge", "score": number, "comment": "string" },
+                      { "name": "Answer Quality", "score": number, "comment": "string" },
+                      { "name": "Confidence and Clarity", "score": number, "comment": "string" }
+                    ],
+                    "strengths": ["string", "string"],
+                    "weaknesses": ["string", "string"],
+                    "areasForImprovement": ["string", "string"],
+                    "improvementSuggestions": ["string", "string"],
+                    "recommendedTopics": ["string", "string"],
+                    "finalAssessment": "string"
+                  }`,
+                },
+              ],
+            },
+          ],
+        });
+
+        const rawJson = response.text?.replace(/```json/g, "").replace(/```/g, "").trim() || "";
+        if (rawJson) {
+          feedbackObj = JSON.parse(rawJson);
+        }
+      } catch (directErr) {
+        console.error("Direct GoogleGenAI feedback generation error:", directErr);
+      }
     }
 
-    await feedbackRef.set(feedback);
+    if (feedbackObj && feedbackObj.totalScore) {
+      const feedback = {
+        interviewId: interviewId,
+        userId: userId,
+        totalScore: feedbackObj.totalScore,
+        categoryScores: feedbackObj.categoryScores || [],
+        strengths: feedbackObj.strengths || [],
+        weaknesses: feedbackObj.weaknesses || [],
+        areasForImprovement: feedbackObj.areasForImprovement || [],
+        improvementSuggestions: feedbackObj.improvementSuggestions || [],
+        recommendedTopics: feedbackObj.recommendedTopics || [],
+        finalAssessment: feedbackObj.finalAssessment || "The candidate completed the interview session.",
+        createdAt: new Date().toISOString(),
+      };
 
-    return { success: true, feedbackId: feedbackRef.id };
+      let feedbackRef;
+      if (feedbackId) {
+        feedbackRef = db.collection("feedback").doc(feedbackId);
+      } else {
+        feedbackRef = db.collection("feedback").doc();
+      }
+
+      await feedbackRef.set(feedback);
+      return { success: true, feedbackId: feedbackRef.id };
+    }
   } catch (error) {
     console.error("AI feedback generation fallback, creating transcript-based report:", error);
 
