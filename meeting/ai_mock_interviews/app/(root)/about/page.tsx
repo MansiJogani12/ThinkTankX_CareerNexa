@@ -12,7 +12,7 @@ export default function AboutPage() {
           Empowering your <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-fuchsia-500 to-indigo-500 animate-shimmer bg-[length:200%_auto]">career journey.</span>
         </h1>
         <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-          PrepWise is the ultimate AI-powered career toolkit. We bridge the gap between talented individuals and their dream jobs by offering state-of-the-art tools for resume building, skill analysis, and interview preparation.
+          CareerNexa is the ultimate AI-powered career toolkit. We bridge the gap between talented individuals and their dream jobs by offering state-of-the-art tools for resume building, skill analysis, and interview preparation.
         </p>
       </div>
 
@@ -42,9 +42,9 @@ export default function AboutPage() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl -z-10" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -z-10" />
           <div className="flex flex-col gap-6">
-            <h3 className="text-xl font-bold">Why Choose PrepWise?</h3>
+            <h3 className="text-xl font-bold">Why Choose CareerNexa?</h3>
             <p className="text-white/60 text-sm leading-relaxed">
-              Unlike traditional platforms, PrepWise doesn't just give generic advice. Our AI analyzes your specific background and the roles you're targeting to generate tailored recommendations, custom interview questions, and a flawlessly formatted resume that highlights your true potential.
+              Unlike traditional platforms, CareerNexa doesn't just give generic advice. Our AI analyzes your specific background and the roles you're targeting to generate tailored recommendations, custom interview questions, and a flawlessly formatted resume that highlights your true potential.
             </p>
             <div className="h-px w-full bg-white/10" />
             <div className="flex items-center justify-between">
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </div>
       
       <div className="text-center flex flex-col items-center justify-center border-t border-white/10 pt-16">
-        <Image src="/logo.svg" alt="PrepWise Logo" width={48} height={48} className="mb-6 opacity-80" />
+        <Image src="/logo.svg" alt="CareerNexa Logo" width={48} height={48} className="mb-6 opacity-80" />
         <h2 className="text-2xl font-bold mb-2">Ready to take the next step?</h2>
         <p className="text-white/50 text-sm mb-8">Join thousands of professionals landing their dream roles.</p>
       </div>

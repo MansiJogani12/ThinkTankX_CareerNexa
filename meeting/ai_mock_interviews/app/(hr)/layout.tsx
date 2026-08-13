@@ -22,7 +22,7 @@ export default function HRLayout({ children }: { children: React.ReactNode }) {
             <Building2 className="h-6 w-6 text-white" />
           </div>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-300">
-            PrepWise HR
+            CareerNexa HR
           </span>
         </div>
         
@@ -65,7 +65,7 @@ export default function HRLayout({ children }: { children: React.ReactNode }) {
             <div className="p-2 bg-purple-600 rounded-xl">
               <Building2 className="h-5 w-5 text-white" />
             </div>
-            <span className="text-lg font-bold">PrepWise HR</span>
+            <span className="text-lg font-bold">CareerNexa HR</span>
           </div>
           <div className="flex items-center space-x-4">
              <UserCircle className="w-6 h-6 text-gray-400" />

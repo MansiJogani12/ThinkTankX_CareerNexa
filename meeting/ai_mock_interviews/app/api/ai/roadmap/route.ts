@@ -6,27 +6,32 @@ import { generateAdaptiveRoadmap } from "@/lib/roadmapEngine";
 
 export async function POST(req: NextRequest) {
   try {
-    const { user, error } = await verifyAuth(req);
-    if (error || !user) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
-    const { currentSkills, experienceLevel, projects, targetRole } = await req.json();
+    const { currentSkills, experienceLevel, projects, targetRole, difficultyLevel, timeframe } = await req.json();
 
     if (!targetRole || !currentSkills || !Array.isArray(currentSkills)) {
       return NextResponse.json({ message: "targetRole and currentSkills array are required" }, { status: 400 });
     }
 
-    const userDoc = await db.collection("users").doc(user.uid).get();
-    const profile = userDoc.data()?.skillProfile || {};
+    let profile: any = {};
+    try {
+      const { user } = await verifyAuth(req);
+      if (user?.uid) {
+        const userDoc = await db.collection("users").doc(user.uid).get();
+        profile = userDoc.data()?.skillProfile || {};
+      }
+    } catch {}
     
-    // Override profile attributes based on UI input
     profile.technicalSkills = currentSkills;
-    profile.experienceLevel = experienceLevel;
-    profile.projects = projects;
+    profile.experienceLevel = experienceLevel || "Mid";
+    profile.projects = projects || [];
 
     const dna = computeSkillDNA(profile);
-    const jsonResponse = await generateAdaptiveRoadmap(dna, targetRole);
+    const jsonResponse = await generateAdaptiveRoadmap(
+      dna,
+      targetRole,
+      difficultyLevel || "Intermediate",
+      timeframe || "3 Months"
+    );
 
     return NextResponse.json(jsonResponse);
   } catch (error: any) {
@@ -34,4 +39,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }
 }
-

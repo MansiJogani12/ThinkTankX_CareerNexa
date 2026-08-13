@@ -108,7 +108,7 @@ export const interviewer: CreateAssistantDTO = {
   },
   voice: {
     provider: "11labs",
-    voiceId: "sarah",
+    voiceId: "EXAVITQu4vr4xnSDxMaL",
     stability: 0.4,
     similarityBoost: 0.8,
     speed: 0.9,
@@ -117,7 +117,7 @@ export const interviewer: CreateAssistantDTO = {
   },
   model: {
     provider: "openai",
-    model: "gpt-4",
+    model: "gpt-4o-mini",
     messages: [
       {
         role: "system",

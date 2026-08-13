@@ -3,74 +3,70 @@
     {
       "skillProfile": {
         "technicalSkills": [
-          "Artificial Intelligence (AI)",
-          "Machine Learning (ML)",
-          "Robotics",
-          "Computer Vision",
-          "Data Analytics",
-          "Dashboard Analytics",
-          "Web Technologies",
-          "Embedded Systems",
-          "Biometric Systems",
-          "Object Detection",
-          "Security Surveillance",
-          "Real-time Monitoring",
-          "Problem-solving"
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "Frontend Development",
+          "React State Management",
+          "Tailwind CSS Layouts",
+          "API Integration",
+          "Webpack Build Systems",
+          "React.js",
+          "Next.js",
+          "Git",
+          "Webpack",
+          "Vite",
+          "ESLint",
+          "Team Collaboration",
+          "Problem Solving",
+          "Adaptability",
+          "Active Listening"
         ],
         "softSkills": [
-          "Team Work",
-          "Time Management",
-          "Creativity",
-          "Innovation",
-          "Presentation Skills"
+          "Team Collaboration",
+          "Problem Solving",
+          "Adaptability",
+          "Active Listening"
         ],
         "toolsFrameworks": [
-          "ESP32",
-          "R307 Sensor",
-          "Jetson",
-          "Visualization Tools"
+          "React.js",
+          "Next.js",
+          "Git",
+          "Webpack",
+          "Vite",
+          "ESLint"
         ],
         "programmingLanguages": [
-          "C",
-          "C++",
-          "Python"
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3"
         ],
-        "certifications": [],
-        "experienceLevel": "Junior",
+        "certifications": [
+          "Meta Frontend Developer Professional Certificate"
+        ],
+        "experienceLevel": "Mid",
         "projects": [
           {
-            "name": "Fingerprint Attendance System",
-            "description": "Built a biometric attendance system using ESP32 and R307 fingerprint sensor, implementing fingerprint enrollment, verification, real-time attendance logging, and integrating buzzer feedback for authentication status."
-          },
-          {
-            "name": "AI-Powered Smart Attendance & Learning Platform",
-            "description": "Developed an AI-based platform for automated attendance tracking and learning insights, generating real-time dashboards to monitor student engagement and performance trends, and providing data-driven recommendations for academic improvement."
-          },
-          {
-            "name": "Student Behaviour Analysis System",
-            "description": "Designed an AI-driven dashboard to analyze classroom behavior patterns, visualize engagement levels, noise trends, and performance insights, enabling institutions to make data-driven discipline and learning decisions."
-          },
-          {
-            "name": "SarvaNetra – Smart Security Surveillance Robot",
-            "description": "Built an autonomous surveillance robot for real-time monitoring, integrating camera-based object detection for smart threat analysis, and designed for security patrolling and remote monitoring applications."
+            "name": "E-Commerce Admin Dashboard",
+            "description": "Built a robust administrative dashboard using React, Tailwind CSS, and Recharts."
           }
         ]
       },
       "atsAnalysis": {
-        "atsScore": 85,
-        "summary": "This resume demonstrates good ATS compatibility due to its clean formatting, standard structure, and effective use of keywords in project descriptions. The candidate's strong technical foundation in AI/ML and robotics is evident through their projects. To further enhance its ATS performance, key areas for improvement include expanding the 'Skills' section to be more exhaustive and removing the 'References' section.",
+        "atsScore": 75,
+        "summary": "ATS analysis complete. Review the suggestions to improve parsability and impact.",
         "strengths": [
-          "Clear and standard section headings are used, making it easy for ATS to parse.",
-          "Contact information is prominently placed at the top.",
-          "Bullet points are effectively used for project descriptions and achievements.",
-          "Strong use of relevant technical keywords (AI, ML, Robotics, Computer Vision) throughout the summary and projects.",
-          "Consistent and clean formatting with no complex visual elements that could confuse ATS.",
-          "Quantifiable achievements in the 'Awards' section are well-articulated."
+          "Strong keyword presence for technical skills.",
+          "Practical experience demonstrated through projects.",
+          "Continuous learning shown through certifications."
         ],
-        "suggestionsCount": 6
+        "suggestionsCount": 0
       },
       "id": "mock_uid",
-      "uid": "mock_uid"
+      "uid": "mock_uid",
+      "freeRequestsUsed": 2
     }
   ],
   "interviews": [
@@ -143,7 +139,7 @@
     {
       "interviewId": "2",
       "userId": "mock_uid",
-      "totalScore": 78,
+      "totalScore": 85,
       "categoryScores": [
         {
           "name": "Communication Skills",
@@ -188,15 +184,15 @@
         "Database Sharding and Indexing",
         "State Management & Performance Optimization"
       ],
-      "finalAssessment": "Overall, the candidate performed well, demonstrating strong communication skills and good foundational technical knowledge for a Full Stack Developer role. With additional preparation in advanced backend/system design patterns, they will be a highly competitive applicant.",
-      "createdAt": "2026-08-11T17:55:55.869Z",
+      "finalAssessment": "Completed mock interview evaluation scoring 85/100. Articulated core technical responses with high clarity and steady pace.",
+      "createdAt": "2026-08-13T19:05:00.678Z",
       "id": "0.319286068652489",
       "uid": "0.319286068652489"
     },
     {
       "interviewId": "1",
       "userId": "mock_uid",
-      "totalScore": 78,
+      "totalScore": 84,
       "categoryScores": [
         {
           "name": "Communication Skills",
@@ -241,15 +237,15 @@
         "Database Sharding and Indexing",
         "State Management & Performance Optimization"
       ],
-      "finalAssessment": "Overall, the candidate performed well, demonstrating strong communication skills and good foundational technical knowledge for a Frontend Developer role. With additional preparation in advanced backend/system design patterns, they will be a highly competitive applicant.",
-      "createdAt": "2026-08-14T03:22:52.668Z",
+      "finalAssessment": "Completed mock interview evaluation scoring 84/100. Articulated core technical responses with high clarity and steady pace.",
+      "createdAt": "2026-08-13T19:45:53.797Z",
       "id": "0.2859449173101364",
       "uid": "0.2859449173101364"
     },
     {
       "interviewId": "0.6926807265886152",
       "userId": "mock_uid",
-      "totalScore": 78,
+      "totalScore": 93,
       "categoryScores": [
         {
           "name": "Communication Skills",
@@ -294,8 +290,8 @@
         "Database Sharding and Indexing",
         "State Management & Performance Optimization"
       ],
-      "finalAssessment": "Overall, the candidate performed well, demonstrating strong communication skills and good foundational technical knowledge for a Data Engineering role. With additional preparation in advanced backend/system design patterns, they will be a highly competitive applicant.",
-      "createdAt": "2026-08-13T14:19:17.393Z",
+      "finalAssessment": "Completed mock interview evaluation scoring 93/100. Articulated core technical responses with high clarity and steady pace.",
+      "createdAt": "2026-08-13T20:00:00.554Z",
       "id": "0.9253778969901867",
       "uid": "0.9253778969901867"
     }
@@ -2558,6 +2554,211 @@
       },
       "id": "mock_uid_jobmatch_15ca7416eb09fbef0a1ebf3adbd633b9fd81c241741f4523031c85df2b6cf9b2",
       "uid": "mock_uid_jobmatch_15ca7416eb09fbef0a1ebf3adbd633b9fd81c241741f4523031c85df2b6cf9b2"
+    },
+    {
+      "result": {
+        "skillsExtracted": {
+          "technicalSkills": [
+            "Frontend Development",
+            "React State Management",
+            "Tailwind CSS Layouts",
+            "API Integration",
+            "Webpack Build Systems"
+          ],
+          "softSkills": [
+            "Team Collaboration",
+            "Problem Solving",
+            "Adaptability",
+            "Active Listening"
+          ],
+          "toolsFrameworks": [
+            "React.js",
+            "Next.js",
+            "Git",
+            "Webpack",
+            "Vite",
+            "ESLint"
+          ],
+          "programmingLanguages": [
+            "JavaScript",
+            "TypeScript",
+            "HTML5",
+            "CSS3"
+          ],
+          "certifications": [
+            "Meta Frontend Developer Professional Certificate"
+          ],
+          "experienceLevel": "Mid",
+          "experience": [
+            {
+              "company": "Tech Corp",
+              "title": "Frontend Developer",
+              "dates": "2021-2023"
+            }
+          ],
+          "education": [
+            {
+              "institution": "University of Tech",
+              "degree": "B.S. Computer Science"
+            }
+          ],
+          "projects": [
+            {
+              "name": "E-Commerce Admin Dashboard",
+              "description": "Built a robust administrative dashboard using React, Tailwind CSS, and Recharts."
+            }
+          ]
+        },
+        "rawTextSummary": "Your resume is generally ATS-friendly but needs more targeted keywords to pass higher thresholds.",
+        "atsScore": 75,
+        "scoreBreakdown": {
+          "formatting": {
+            "score": 100,
+            "feedback": "Evaluated based on presence of core sections."
+          },
+          "keywords": {
+            "score": 88,
+            "feedback": "Evaluated based on volume of extracted keywords."
+          },
+          "structure": {
+            "score": 85,
+            "feedback": "Assumes standard top-down chronological structure."
+          },
+          "readability": {
+            "score": 90,
+            "feedback": "Parsable text detected successfully."
+          }
+        },
+        "suggestions": [],
+        "strengths": [
+          "Strong keyword presence for technical skills.",
+          "Practical experience demonstrated through projects.",
+          "Continuous learning shown through certifications."
+        ],
+        "summary": "ATS analysis complete. Review the suggestions to improve parsability and impact."
+      },
+      "id": "mock_uid_de2a74115444724f2abbc92d0c6c334435d7c2f63cf70b95f4a497313177d929",
+      "uid": "mock_uid_de2a74115444724f2abbc92d0c6c334435d7c2f63cf70b95f4a497313177d929"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_aaa2a553d9eb1ce6e7d2187d30b44e94928123886e42a5cbb5cb195d22833d38",
+      "uid": "mock_uid_jobmatch_aaa2a553d9eb1ce6e7d2187d30b44e94928123886e42a5cbb5cb195d22833d38"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_f9a1f4050004676c3f6cbbe93988d7489d9e946426efd136ddd91d16fe56e11a",
+      "uid": "mock_uid_jobmatch_f9a1f4050004676c3f6cbbe93988d7489d9e946426efd136ddd91d16fe56e11a"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_0f6ac2cef31bf61a71c07e1e2f7e9e8257ef5d5cd2ff27043c22a406439b70c6",
+      "uid": "mock_uid_jobmatch_0f6ac2cef31bf61a71c07e1e2f7e9e8257ef5d5cd2ff27043c22a406439b70c6"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_17f4c453560f1764d33b6a44df770321204687296bf05b68e550fcd3c5a2d2ba",
+      "uid": "mock_uid_jobmatch_17f4c453560f1764d33b6a44df770321204687296bf05b68e550fcd3c5a2d2ba"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_2ff48ef2dbd4cbf86be175a85fe88587ff01092b15f4bbc1b36e565494f2811c",
+      "uid": "mock_uid_jobmatch_2ff48ef2dbd4cbf86be175a85fe88587ff01092b15f4bbc1b36e565494f2811c"
     }
   ],
   "savedJobs": [
@@ -2680,6 +2881,26 @@
       "savedAt": "2026-08-14T04:37:44.010Z",
       "userId": "mock_uid",
       "uid": "0.15101385752951835"
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Tech Startups",
+      "matchScore": 92,
+      "location": "Remote",
+      "type": "Full-time",
+      "skills": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "AWS"
+      ],
+      "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+      "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter.",
+      "id": "0.2665103686094715",
+      "status": "Saved",
+      "savedAt": "2026-08-13T20:25:45.795Z",
+      "userId": "mock_uid",
+      "uid": "0.2665103686094715"
     }
   ]
 }

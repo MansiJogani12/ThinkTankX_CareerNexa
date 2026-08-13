@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { verifyAuth, incrementRequestCount } from "@/lib/verifyAuth";
 import { ResumeAnalyserPrompt } from "@/lib/prompt";
 import { db } from "@/firebase/admin";
-import { computeDeterministicATSScore } from "@/lib/ai-career-utils";
+import { computeDetailedATSAnalysis } from "@/lib/ai-career-utils";
 import crypto from "crypto";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY! });
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
     let jsonResponse;
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-1.5-flash",
         contents: [
           {
             role: "user",

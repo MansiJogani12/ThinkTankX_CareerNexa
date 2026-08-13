@@ -60,7 +60,7 @@ export async function analyzeSkillGap(dna: SkillDNA, targetRole: string) {
     // LLM Fallback for unrecognized custom roles
     try {
       const { object } = await generateObject({
-        model: google("gemini-2.5-flash", { structuredOutputs: true }),
+        model: google("gemini-1.5-flash", { structuredOutputs: true }),
         schema: z.object({
           requiredSkills: z.array(z.string()).describe("6 to 8 core technical and soft skills required for this job role.")
         }),
@@ -118,52 +118,103 @@ export async function analyzeSkillGap(dna: SkillDNA, targetRole: string) {
   };
 }
 
-export async function generateAdaptiveRoadmap(dna: SkillDNA, targetRole: string): Promise<RoadmapItem[]> {
+export async function generateAdaptiveRoadmap(
+  dna: SkillDNA,
+  targetRole: string,
+  difficultyLevel: string = "Intermediate",
+  timeframe: string = "3 Months"
+): Promise<RoadmapItem[]> {
   const gap = await analyzeSkillGap(dna, targetRole);
+  
+  // Attempt Gemini generation for rich difficulty & timeframe specific roadmap
+  try {
+    const { object } = await generateObject({
+      model: google("gemini-1.5-flash", { structuredOutputs: false }),
+      schema: z.object({
+        roadmap: z.array(
+          z.object({
+            topic: z.string().describe("Clear topic or milestone name"),
+            priority: z.enum(["High", "Medium", "Low"]),
+            estimatedTime: z.string().describe("Estimated time (e.g. Week 1-2, Day 1-5)"),
+            resources: z.array(z.string()).describe("2-3 specific learning resource names or documentation links"),
+            projectSuggestion: z.string().describe("Hands-on project suggestion for this phase"),
+          })
+        ),
+      }),
+      prompt: `Create a structured ${difficultyLevel} level learning roadmap for a candidate aiming to become a "${targetRole}".
+Target Completion Duration: ${timeframe}.
+Candidate's Current Skills: ${dna.technicalSkills.map((s) => s.name).join(", ") || "Foundational basics"}.
+Target Role Missing Skills: ${gap.missingSkills.map((s) => s.skill).join(", ") || "Advanced role competencies"}.
+
+Create 5 to 7 sequential milestones suitable for a ${difficultyLevel} level learner spanning across the ${timeframe} timeline.`,
+    });
+
+    if (object.roadmap && object.roadmap.length > 0) {
+      return object.roadmap.map((item) => ({
+        ...item,
+        completed: false,
+      }));
+    }
+  } catch (err) {
+    console.warn("AI roadmap generation fallback to structured template:", err);
+  }
+
+  // Fallback structured template adjusting for timeframe & difficulty
   const roadmap: RoadmapItem[] = [];
 
-  // Add missing skills to roadmap
-  gap.missingSkills.forEach(item => {
+  const timeMultiplier = timeframe.includes("1 Month") ? "3-5 Days" : timeframe.includes("2 Months") ? "1 Week" : "2 Weeks";
+
+  if (difficultyLevel === "Beginner") {
     roadmap.push({
-      topic: `Master ${item.skill}`,
+      topic: `Foundations of ${targetRole}`,
+      priority: "High",
+      estimatedTime: timeMultiplier,
+      resources: ["MDN Web Docs", "FreeCodeCamp", "W3Schools"],
+      projectSuggestion: `Build 3 basic starter exercises focusing on ${targetRole} fundamentals.`,
+      completed: false,
+    });
+  }
+
+  gap.missingSkills.forEach((item) => {
+    roadmap.push({
+      topic: `${difficultyLevel === "Advanced" ? "Advanced" : "Master"} ${item.skill}`,
       priority: item.priority,
-      estimatedTime: "2 weeks",
-      resources: [`Official ${item.skill} Docs`, "FreeCodeCamp"],
-      projectSuggestion: `Build a small prototype using ${item.skill} to understand its core concepts.`,
-      completed: false
+      estimatedTime: timeMultiplier,
+      resources: [`Official ${item.skill} Documentation`, "YouTube Crash Course"],
+      projectSuggestion: `Build a functional mini-project using ${item.skill} implementing core best practices.`,
+      completed: false,
     });
   });
 
-  // Add weak skills
-  gap.weakSkills.forEach(item => {
+  gap.weakSkills.forEach((item) => {
     roadmap.push({
-      topic: `Improve ${item.skill}`,
+      topic: `Deep Dive & Optimize: ${item.skill}`,
       priority: item.priority,
-      estimatedTime: "1 week",
-      resources: ["YouTube Tutorials"],
-      projectSuggestion: `Integrate ${item.skill} into an existing project.`,
-      completed: false
+      estimatedTime: "1 Week",
+      resources: ["GitHub Repositories", "StackOverflow"],
+      projectSuggestion: `Refactor an existing project to integrate ${item.skill}.`,
+      completed: false,
     });
   });
 
-  // Add standard final steps
   roadmap.push({
-    topic: "Final Production Project",
+    topic: `${difficultyLevel} Capstone Production Project`,
     priority: "High",
-    estimatedTime: "3 weeks",
-    resources: ["Vercel Deploy docs", "GitHub Actions"],
-    projectSuggestion: `Deploy a complete, polished project demonstrating your readiness for ${targetRole}.`,
-    completed: false
+    estimatedTime: timeframe.includes("1 Month") ? "1 Week" : "3 Weeks",
+    resources: ["GitHub Actions", "Vercel / Render Deployment"],
+    projectSuggestion: `Build and deploy a full-stack end-to-end ${targetRole} portfolio application.`,
+    completed: false,
   });
 
   roadmap.push({
-    topic: "Interview Preparation",
+    topic: "CareerNexa AI Mock Interview & Evaluation",
     priority: "High",
-    estimatedTime: "1 week",
-    resources: ["PrepWise Mock Interview", "Cracking the Coding Interview"],
-    projectSuggestion: `Conduct 3 mock technical interviews targeting ${targetRole}.`,
-    completed: false
+    estimatedTime: "3 Days",
+    resources: ["CareerNexa Mock Interview", "Interview Preparation Checklist"],
+    projectSuggestion: `Complete 2 AI-conducted mock interviews targeting ${targetRole}.`,
+    completed: false,
   });
 
   return roadmap;
 }
+

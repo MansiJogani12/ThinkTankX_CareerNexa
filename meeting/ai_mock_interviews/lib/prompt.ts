@@ -135,71 +135,53 @@ ATS Rules to follow:
 
 export const buildLatexPrompt = (latexText: string) => `
 You are an expert ATS optimization specialist and LaTeX parser.
-Read the following raw LaTeX resume code and extract its structure, contents, and visual design rules into a dynamic JSON format.
+Read the following raw LaTeX resume code and extract its content into a clean, structured JSON resume format.
 
 RAW LATEX CODE:
 ${latexText}
 
-Do not force the data into fixed Experience/Education buckets if they don't exist. Instead, create a generic list of "sections".
-For each section, extract the "entries" (e.g. jobs, degrees, publications, awards).
-Each entry should be an object containing key-value string pairs (or arrays of strings for bullets) that represent the fields for that entry (e.g. "Title", "Company", "Dates", "Bullets", "Award Name", "Description").
-
-Additionally, infer the styling pattern used by this LaTeX template:
-- columnLayout: "single" | "two-column"
-- headerStyle: "rule-under" (e.g. \hrulefill or \vspace{-...}\rule), "filled-bar", "small-caps" (e.g. \scshape), "colored-accent", or "normal"
-- fontPairing: "sans", "serif", or "mixed"
-- dateAlignment: "right" (e.g. \hfill), "inline"
-- spacingDensity: "compact" (e.g. negative vspace, itemsep=0), "airy", or "normal"
-
 Return ONLY valid JSON with this exact structure:
 {
-  "isDynamic": true,
-  "name": "Full Name extracted from latex or empty string",
+  "name": "Full Name",
   "email": "email@example.com",
   "phone": "phone number",
   "location": "City, Country",
   "linkedin": "linkedin url or empty string",
-  "style": {
-    "columnLayout": "single",
-    "headerStyle": "rule-under",
-    "fontPairing": "serif",
-    "dateAlignment": "right",
-    "spacingDensity": "normal"
-  },
-  "sections": [
+  "summary": "3-4 sentence professional summary",
+  "experience": [
     {
-      "id": "section-1",
-      "title": "Experience",
-      "entries": [
-        {
-          "id": "entry-1-1",
-          "fields": {
-            "Title": "Software Engineer",
-            "Company": "Tech Corp",
-            "Dates": "2020 - Present",
-            "Bullets": [
-              "Did X",
-              "Did Y"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "section-2",
-      "title": "Publications",
-      "entries": [
-        {
-          "id": "entry-2-1",
-          "fields": {
-            "Title": "A paper on AI",
-            "Venue": "NeurIPS",
-            "Year": "2023"
-          }
-        }
+      "title": "Job Title",
+      "company": "Company Name",
+      "location": "City, Country",
+      "startDate": "Month Year",
+      "endDate": "Month Year or Present",
+      "bullets": [
+        "Bullet point 1",
+        "Bullet point 2"
       ]
     }
-  ]
+  ],
+  "education": [
+    {
+      "degree": "Degree Name",
+      "school": "Institution Name",
+      "location": "City, Country",
+      "year": "Graduation Year",
+      "gpa": "GPA if available"
+    }
+  ],
+  "skills": {
+    "technical": ["skill1", "skill2"],
+    "soft": ["skill1", "skill2"]
+  },
+  "projects": [
+    {
+      "name": "Project Name",
+      "description": "Description of project",
+      "link": "project link"
+    }
+  ],
+  "certifications": ["Certification 1"]
 }
 `;
 

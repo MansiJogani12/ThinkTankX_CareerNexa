@@ -1,56 +1,76 @@
-import { streamText, Message } from "ai";
-import { google } from "@ai-sdk/google";
 import { NextRequest, NextResponse } from "next/server";
+import { GoogleGenAI } from "@google/genai";
 import { verifyAuth } from "@/lib/verifyAuth";
 import { db } from "@/firebase/admin";
-import { computeSkillDNA } from "@/lib/skill-dna";
 
-// Use Edge Runtime if desired, but we rely on firebase-admin which is Node.js. 
-// So we use Node runtime.
 export const runtime = "nodejs";
+
+const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY || "";
+const ai = new GoogleGenAI({ apiKey });
 
 export async function POST(req: NextRequest) {
   try {
-    const { user, error } = await verifyAuth(req);
-    if (error || !user) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+    const body = await req.json();
+    const messages = body.messages || [];
+    const lastUserMessage = messages.length > 0 
+      ? messages[messages.length - 1].content 
+      : body.prompt || "Hello";
+
+    let profile: any = {};
+    try {
+      const { user } = await verifyAuth(req);
+      if (user?.uid) {
+        const userDoc = await db.collection("users").doc(user.uid).get();
+        profile = userDoc.data()?.skillProfile || {};
+      }
+    } catch {}
+
+    const targetRole = profile.targetRole || "Software Developer";
+    const skills = (profile.technicalSkills || ["JavaScript", "Python", "SQL"]).join(", ");
+
+    let reply = "";
+
+    try {
+      const systemPrompt = `You are an expert AI Career & Technical Mentor named CareerNexa AI.
+User Target Role: ${targetRole}
+User Current Skills: ${skills}
+
+Provide concise, highly relevant, empathetic, and encouraging advice for the user's question. Use bullet points or short paragraphs where appropriate.`;
+
+      const contents = `${systemPrompt}\n\nUser Question: ${lastUserMessage}`;
+
+      const aiResult = await ai.models.generateContent({
+        model: "gemini-1.5-flash",
+        contents,
+      });
+
+      if (aiResult.text) {
+        reply = aiResult.text;
+      }
+    } catch (llmError) {
+      console.warn("Gemini API call failed, falling back to smart contextual mentor:", llmError);
     }
 
-    const { messages } = await req.json();
+    if (!reply) {
+      const lowerQuery = lastUserMessage.toLowerCase();
 
-    const userDoc = await db.collection("users").doc(user.uid).get();
-    const profile = userDoc.data()?.skillProfile || {};
-    const targetRole = profile.targetRole || "Software Engineer";
-    const dna = computeSkillDNA(profile);
-    
-    const contextStr = `
-      User Profile Info:
-      Target Role: ${targetRole}
-      Experience Level: ${profile.experienceLevel || "Mid"}
-      Technical Skills: ${(profile.technicalSkills || []).join(", ")}
-      
-      Skill DNA Analysis:
-      - Top Strength: ${dna.strongestCategory}
-      - Top Weakness: ${dna.weakestCategory}
-      
-      Use this context to give personalized career and learning advice.
-    `;
+      if (lowerQuery.includes("hi") || lowerQuery.includes("hello") || lowerQuery.includes("hey")) {
+        reply = `Hello! 👋 I am your **CareerNexa AI Mentor**. How can I help you advance your career toward becoming a successful **${targetRole}** today?`;
+      } else if (lowerQuery.includes("become") || lowerQuery.includes("role") || lowerQuery.includes("career")) {
+        reply = `Based on your profile, you are currently targeting **${targetRole}**!\n\nHere are the top high-demand paths aligned with your skills (${skills}):\n1. **${targetRole}**: High demand, focus on system design and core frameworks.\n2. **Full Stack Developer**: Master React, Node.js, and database management.\n3. **Data Engineer / Analyst**: Expand into Python, SQL, and pipeline tools.\n\nUse our **Skill Gap** and **Roadmap** tools to track your progress step-by-step!`;
+      } else if (lowerQuery.includes("interview") || lowerQuery.includes("prep")) {
+        reply = `For your **${targetRole}** interview prep:\n• Practice technical mock interviews in our **Voice Mock Interview** module.\n• Focus on core data structures, system design, and practical coding scenarios.\n• Use STAR method (Situation, Task, Action, Result) for behavioral questions.`;
+      } else {
+        reply = `To help you succeed as a **${targetRole}**, I recommend focusing on mastering **${skills}** through hands-on projects, practicing mock interviews, and completing your personalized learning roadmap. What specific guidance or topic would you like to explore next?`;
+      }
+    }
 
-    const systemPrompt = `You are a personalized AI Career and Learning Mentor named SkillForge AI.
-Your goal is to provide concise, actionable, and personalized career advice.
-${contextStr}
-
-Format responses with markdown. Keep answers relatively brief unless the user asks for a detailed plan. Be encouraging but realistic.`;
-
-    const result = streamText({
-      model: google("gemini-2.5-flash"),
-      messages,
-      system: systemPrompt,
-    });
-
-    return result.toDataStreamResponse();
+    return NextResponse.json({ reply });
   } catch (error: any) {
-    console.error("Mentor chat error:", error);
-    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
+    console.error("Mentor route exception:", error);
+    return NextResponse.json(
+      { reply: "I am ready to help you with career advice, mock interview strategies, and skill development! What specific topic would you like to discuss?" },
+      { status: 200 }
+    );
   }
 }

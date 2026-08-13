@@ -348,37 +348,60 @@ export default function SkillGapPage() {
               </div>
             )}
 
-            {/* Missing Skills */}
-            {result.missingSkills?.length > 0 && (
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
-                <p className="text-xs text-white/40 uppercase tracking-widest font-semibold">
-                  Missing Core Requirements ({result.missingSkills.length})
+            {/* Missing Skills Section */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
+              <div className="flex justify-between items-center flex-wrap gap-2">
+                <p className="text-xs text-rose-400 uppercase tracking-widest font-bold flex items-center gap-1.5">
+                  <AlertCircle size={14} /> Missing Core Requirements ({result.missingSkills?.length || 0})
                 </p>
+                <Link
+                  href={`/recommendations?role=${encodeURIComponent(targetRole)}&missing=${encodeURIComponent(
+                    result.missingSkills?.map((m) => m.skill).join(",") || ""
+                  )}`}
+                  className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold"
+                >
+                  View Targeted Project Recommendations →
+                </Link>
+              </div>
+
+              {result.missingSkills?.length > 0 ? (
                 <div className="flex flex-col gap-3">
                   {result.missingSkills.map((m, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-xl border border-white/5 bg-white/[0.01] flex flex-col gap-2"
+                      className="p-4 rounded-xl border border-rose-500/10 bg-rose-500/[0.02] flex flex-col gap-2.5"
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm font-semibold text-white/95">{m.skill}</span>
+                        <span className="text-sm font-bold text-white/95">{m.skill}</span>
                         <span
-                          className={`text-[9px] font-extrabold uppercase px-2 py-0.5 rounded border ${getPriorityBadgeClass(
+                          className={`text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded border ${getPriorityBadgeClass(
                             m.priority
                           )}`}
                         >
                           {m.priority} Priority
                         </span>
                       </div>
-                      <div className="flex items-start gap-1.5 text-xs text-white/60">
-                        <ChevronRight size={13} className="shrink-0 mt-0.5 text-indigo-400" />
+                      <div className="flex items-start gap-1.5 text-xs text-white/70">
+                        <ChevronRight size={13} className="shrink-0 mt-0.5 text-rose-400" />
                         {m.feedback}
+                      </div>
+                      <div className="flex justify-end pt-1">
+                        <Link
+                          href={`/recommendations?role=${encodeURIComponent(targetRole)}&missing=${encodeURIComponent(m.skill)}`}
+                          className="bg-white/5 hover:bg-white/10 border border-white/10 px-2.5 py-1 rounded-lg text-[10px] text-indigo-300 font-semibold transition-colors"
+                        >
+                          Find {m.skill} Projects →
+                        </Link>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <p className="text-emerald-400 text-xs font-semibold bg-emerald-500/10 p-3 rounded-xl border border-emerald-500/20">
+                  ✓ Great job! You possess all primary baseline skills for the {targetRole} role.
+                </p>
+              )}
+            </div>
           </div>
         )}
       </div>

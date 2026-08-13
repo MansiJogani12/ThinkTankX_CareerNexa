@@ -33,6 +33,26 @@ const blankEdu = (): Education => ({
 
 const blankProj = (): Project => ({ name: "", description: "", link: "" });
 
+const DEFAULT_SAMPLE_LATEX = `\\documentclass{article}
+\\begin{document}
+\\name{John Doe}
+\\email{john.doe@example.com}
+\\phone{+91 9876543210}
+\\location{Ahmedabad, India}
+\\linkedin{linkedin.com/in/johndoe}
+
+\\section{Experience}
+\\entry{Software Engineer}{Tech Corp}{2023 - Present}
+\\bullet{Developed high performance REST APIs using Node.js and React.}
+\\bullet{Optimized SQL database queries reducing latency by 35\\%.}
+
+\\section{Education}
+\\entry{B.Tech in Computer Science}{IIT Bombay}{2020 - 2024}
+
+\\section{Skills}
+\\skill{Technical}{React, Node.js, TypeScript, Python, SQL, Docker}
+\\end{document}`;
+
 const Field = ({ label, value, onChange, placeholder, textarea }: any) => (
   <div className="flex flex-col gap-1.5">
     <label className="text-xs text-white/40 uppercase tracking-widest">
@@ -238,10 +258,29 @@ export default function BuildResumePage() {
         throw new Error(data.message || "Failed to build resume");
       }
 
-      if (mode === "latex" && data.isDynamic) {
-         setDynamicData(data);
+      if (mode === "latex") {
+        if (data.name || data.email || data.experience || data.education || data.skills) {
+          setBasics({
+            name: data.name || "",
+            email: data.email || "",
+            phone: data.phone || "",
+            location: data.location || "",
+            linkedin: data.linkedin || "",
+          });
+          setSummary(data.summary || "");
+          if (data.experience?.length) setExp(data.experience);
+          if (data.education?.length) setEdu(data.education);
+          if (data.skills?.technical) setTech(Array.isArray(data.skills.technical) ? data.skills.technical.join(", ") : data.skills.technical);
+          if (data.skills?.soft) setSoft(Array.isArray(data.skills.soft) ? data.skills.soft.join(", ") : data.skills.soft);
+          if (data.projects?.length) setProjects(data.projects);
+          if (data.certifications) setCerts(Array.isArray(data.certifications) ? data.certifications.join(", ") : data.certifications);
+
+          setMode("manual");
+        } else {
+          setResult(data);
+        }
       } else {
-         setResult(data);
+        setResult(data);
       }
     } catch (error: any) {
       setError(error.message || "Failed to build resume");
@@ -669,17 +708,25 @@ export default function BuildResumePage() {
         {mode === "latex" && !dynamicData && (
           <div className="flex flex-col gap-4">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
-              <label className="text-sm font-semibold text-white/90">Paste LaTeX Code</label>
+              <div className="flex justify-between items-center">
+                <label className="text-sm font-semibold text-white/90">LaTeX Code / Template</label>
+                <button
+                  onClick={() => setLatexText(DEFAULT_SAMPLE_LATEX)}
+                  className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold"
+                >
+                  Load Sample LaTeX
+                </button>
+              </div>
               <textarea
                 value={latexText}
                 onChange={(e) => setLatexText(e.target.value)}
-                rows={10}
+                rows={12}
                 placeholder="\documentclass{article}..."
                 className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-indigo-500/50 transition-colors font-mono"
               />
             </div>
             
-            <div className="text-center text-white/40 text-sm">OR</div>
+            <div className="text-center text-white/40 text-sm">OR UPLOAD .TEX FILE</div>
 
             <div
               onDragOver={(e) => e.preventDefault()}
@@ -704,9 +751,9 @@ export default function BuildResumePage() {
 
             <button
               onClick={handleSubmit}
-              className="mt-2 bg-indigo-600 hover:bg-indigo-700 transition-colors py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
+              className="mt-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300 py-3.5 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-white"
             >
-              <FileText size={16} /> Convert LaTeX
+              <FileText size={16} /> Convert LaTeX to Editable Form
             </button>
           </div>
         )}

@@ -44,8 +44,10 @@ export default function RoadmapPage() {
   const [targetRole, setTargetRole] = useState("Frontend Developer");
   const [currentSkills, setCurrentSkills] = useState<string[]>([]);
   const [experienceLevel, setExperienceLevel] = useState("Mid");
+  const [difficultyLevel, setDifficultyLevel] = useState("Intermediate");
+  const [timeframe, setTimeframe] = useState("3 Months");
   const [projects, setProjects] = useState<any[]>([]);
-  
+
   const [roadmap, setRoadmap] = useState<RoadmapItem[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
@@ -110,6 +112,8 @@ export default function RoadmapPage() {
           experienceLevel,
           projects,
           targetRole,
+          difficultyLevel,
+          timeframe,
         }),
       });
 
@@ -215,12 +219,60 @@ export default function RoadmapPage() {
               </div>
             </div>
 
+            {/* Difficulty Level & Timeframe options */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/10 pt-4">
+              {/* Difficulty Level */}
+              <div className="flex flex-col gap-2">
+                <label className="text-xs text-white/40 uppercase tracking-widest font-semibold">
+                  Difficulty Level
+                </label>
+                <div className="flex gap-2">
+                  {["Beginner", "Intermediate", "Advanced"].map((lvl) => (
+                    <button
+                      key={lvl}
+                      type="button"
+                      onClick={() => setDifficultyLevel(lvl)}
+                      className={`flex-1 py-2 rounded-xl text-xs font-bold border transition-all ${
+                        difficultyLevel === lvl
+                          ? "bg-indigo-600 border-indigo-500 text-white shadow-md"
+                          : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10"
+                      }`}
+                    >
+                      {lvl}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Timeframe */}
+              <div className="flex flex-col gap-2">
+                <label className="text-xs text-white/40 uppercase tracking-widest font-semibold">
+                  Target Duration
+                </label>
+                <div className="flex gap-2">
+                  {["1 Month", "2 Months", "3 Months", "6 Months"].map((tf) => (
+                    <button
+                      key={tf}
+                      type="button"
+                      onClick={() => setTimeframe(tf)}
+                      className={`flex-1 py-2 rounded-xl text-xs font-bold border transition-all ${
+                        timeframe === tf
+                          ? "bg-emerald-600 border-emerald-500 text-white shadow-md"
+                          : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10"
+                      }`}
+                    >
+                      {tf}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col gap-2 border-t border-white/10 pt-4">
               <p className="text-xs text-white/30 uppercase tracking-widest">Profile Snapshot</p>
               <div className="flex flex-col gap-1.5 text-sm text-white/70">
-                <p>• Experience Level: <span className="text-indigo-300 font-semibold">{experienceLevel}</span></p>
+                <p>• Level: <span className="text-indigo-300 font-semibold">{difficultyLevel}</span> | Duration: <span className="text-emerald-300 font-semibold">{timeframe}</span></p>
                 <p>• Recognized Skills: <span className="text-white/90">{currentSkills.length > 0 ? `${currentSkills.length} skills loaded` : "No skills saved"}</span></p>
-                <p>• Extracted Projects: <span className="text-white/90">{projects.length > 0 ? `${projects.length} projects detected` : "No projects logged"}</span></p>
               </div>
             </div>
 
@@ -395,10 +447,75 @@ export default function RoadmapPage() {
                         <CheckCircle size={12} />
                         {item.completed ? "Mark Incomplete" : "Mark as Completed"}
                       </button>
-                    </div>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Suggested Projects for Target Role Section */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-5 mt-6 backdrop-blur-xl">
+              <div className="flex justify-between items-center flex-wrap gap-2 border-b border-white/10 pb-4">
+                <div>
+                  <h3 className="font-bold text-lg text-white flex items-center gap-2">
+                    <Code className="text-indigo-400" size={20} /> Suggested Projects for {targetRole}
+                  </h3>
+                  <p className="text-xs text-white/50">Build these high-impact portfolio projects to master missing skills and win interviews.</p>
+                </div>
+                <Link
+                  href={`/recommendations?role=${encodeURIComponent(targetRole)}`}
+                  className="bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/30 text-indigo-300 text-xs font-bold px-3.5 py-1.5 rounded-xl transition-colors flex items-center gap-1"
+                >
+                  View All Project Recommendations →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Project 1 */}
+                <div className="bg-white/[0.02] border border-white/10 hover:border-indigo-500/40 p-5 rounded-2xl flex flex-col gap-3 transition-all duration-300 group">
+                  <div className="flex justify-between items-start">
+                    <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded border bg-rose-500/10 border-rose-500/30 text-rose-400">
+                      HIGH PRIORITY
+                    </span>
+                    <span className="text-[10px] text-white/40 font-semibold">3 Weeks • Intermediate</span>
+                  </div>
+                  <h4 className="font-bold text-white text-md group-hover:text-indigo-300 transition-colors">
+                    Full-Stack Dashboard Application
+                  </h4>
+                  <p className="text-xs text-white/60 leading-relaxed">
+                    A comprehensive administrative dashboard built using React, Next.js App Router, Tailwind CSS, and chart visualizations to strengthen key frontend & API integration skills.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {["Next.js", "React", "TypeScript", "Tailwind CSS", "REST API"].map((tag) => (
+                      <span key={tag} className="bg-white/5 text-[10px] text-white/70 px-2 py-0.5 rounded-md font-mono">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project 2 */}
+                <div className="bg-white/[0.02] border border-white/10 hover:border-indigo-500/40 p-5 rounded-2xl flex flex-col gap-3 transition-all duration-300 group">
+                  <div className="flex justify-between items-start">
+                    <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded border bg-rose-500/10 border-rose-500/30 text-rose-400">
+                      HIGH PRIORITY
+                    </span>
+                    <span className="text-[10px] text-white/40 font-semibold">2 Weeks • Advanced</span>
+                  </div>
+                  <h4 className="font-bold text-white text-md group-hover:text-indigo-300 transition-colors">
+                    Real-time Messaging & Chat Engine
+                  </h4>
+                  <p className="text-xs text-white/60 leading-relaxed">
+                    Develop a secure messaging platform with WebSockets integration to support real-time channel broadcasting, state management, and optimistic UI updates.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {["WebSockets", "Node.js", "React", "Zustand", "State Sync"].map((tag) => (
+                      <span key={tag} className="bg-white/5 text-[10px] text-white/70 px-2 py-0.5 rounded-md font-mono">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

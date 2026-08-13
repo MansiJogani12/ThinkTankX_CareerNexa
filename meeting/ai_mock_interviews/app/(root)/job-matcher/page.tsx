@@ -164,7 +164,7 @@ export default function JobMatcherPage() {
   
   function handlePrepareForJob(job: Job) {
       // Pass data to Interview Prep via localStorage
-      localStorage.setItem("prepwise_job_prep", JSON.stringify({
+      localStorage.setItem("CareerNexa_job_prep", JSON.stringify({
           title: job.title,
           description: job.description || job.whyMatch,
           skills: job.skills,

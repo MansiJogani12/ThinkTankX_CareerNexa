@@ -7,10 +7,8 @@ import {
   Award,
   BookOpen,
   Briefcase,
-  ChevronRight,
   Code,
   ExternalLink,
-  Flame,
   Globe,
   Loader2,
   Plus,
@@ -36,6 +34,45 @@ const popularRoles = [
   "Data Engineer",
 ];
 
+const DEFAULT_RECOMMENDATIONS: RecommendationItem[] = [
+  {
+    name: "Next.js - The Complete Guide (Academind)",
+    category: "Course",
+    whyRecommended: "Learn App Router and Server Components.",
+    skillImproves: "Next.js",
+    difficulty: "Intermediate",
+    estimatedTime: "30 hours",
+    priority: "High",
+  },
+  {
+    name: "Meta Frontend Developer Professional Certificate",
+    category: "Certification",
+    whyRecommended: "Provides industry recognition and structural credibility for React-centric roles.",
+    skillImproves: "React & UX Design",
+    difficulty: "Beginner",
+    estimatedTime: "3 months",
+    priority: "Medium",
+  },
+  {
+    name: "Full-Stack Dashboard Application",
+    category: "Project",
+    whyRecommended: "A comprehensive full-stack application built to strengthen key gaps for the target Frontend Developer role.",
+    skillImproves: "Full Stack Integration",
+    difficulty: "Intermediate",
+    estimatedTime: "3 weeks",
+    priority: "High",
+  },
+  {
+    name: "System Scaling & Optimization",
+    category: "Interview Topic",
+    whyRecommended: "Highly relevant theoretical concepts for tech validation.",
+    skillImproves: "Architecture Design",
+    difficulty: "Advanced",
+    estimatedTime: "4 days",
+    priority: "Medium",
+  },
+];
+
 export default function RecommendationsPage() {
   const [targetRole, setTargetRole] = useState("Frontend Developer");
   const [currentSkills, setCurrentSkills] = useState<string[]>([]);
@@ -45,8 +82,9 @@ export default function RecommendationsPage() {
   
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState("");
-  const [recommendations, setRecommendations] = useState<RecommendationItem[] | null>(null);
+  const [recommendations, setRecommendations] = useState<RecommendationItem[] | null>(DEFAULT_RECOMMENDATIONS);
 
   useEffect(() => {
     let customRole = "";
@@ -163,7 +201,6 @@ export default function RecommendationsPage() {
 
     setError("");
     setGenerating(true);
-    setRecommendations(null);
 
     try {
       const response = await fetch("/api/ai/recommendations", {
@@ -256,14 +293,14 @@ export default function RecommendationsPage() {
           /* Settings Panel */
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-5">
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/30 uppercase tracking-widest">
-                Target Role
+              <label className="text-xs text-white/30 uppercase tracking-widest font-semibold">
+                TARGET ROLE
               </label>
               <div className="flex flex-col gap-3">
                 <input
                   value={targetRole}
                   onChange={(e) => setTargetRole(e.target.value)}
-                  placeholder="e.g. Frontend Developer"
+                  placeholder="Frontend Developer"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/25 outline-none focus:border-indigo-500/50 transition-colors"
                 />
                 <div className="flex flex-wrap gap-2">
@@ -273,7 +310,7 @@ export default function RecommendationsPage() {
                       onClick={() => setTargetRole(role)}
                       className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                         targetRole === role
-                          ? "bg-indigo-600 border-indigo-500 text-white"
+                          ? "bg-indigo-600 border-indigo-500 text-white shadow-md shadow-indigo-600/30"
                           : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10"
                       }`}
                     >
@@ -284,33 +321,36 @@ export default function RecommendationsPage() {
               </div>
             </div>
 
-            {/* Missing Skills Tags Input */}
+            {/* Missing Skills Input */}
             <div className="flex flex-col gap-2 border-t border-white/10 pt-4">
-              <label className="text-xs text-white/30 uppercase tracking-widest">
-                Identify Missing Skills (For Targeted Projects)
+              <label className="text-xs text-white/30 uppercase tracking-widest font-semibold">
+                IDENTIFY MISSING SKILLS (FOR TARGETED PROJECTS)
               </label>
               <div className="flex gap-2">
                 <input
                   value={missingInput}
                   onChange={(e) => setMissingInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && addMissingSkill()}
-                  placeholder="e.g. Spring Boot, Next.js, DSA..."
+                  placeholder="e.g. Next.js, System Architecture..."
                   className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/25 outline-none focus:border-indigo-500/50 transition-colors"
                 />
                 <button
                   onClick={addMissingSkill}
-                  className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="bg-indigo-600 hover:bg-indigo-700 px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-1.5 transition-colors cursor-pointer text-white shadow-md shadow-indigo-600/30"
                 >
                   <Plus size={14} /> Add
                 </button>
               </div>
+              <p className="text-white/30 text-xs italic mt-0.5">
+                Type a missing skill to custom target project recommendations, or use the auto-inferred gaps above.
+              </p>
 
-              {missingSkills.length > 0 ? (
+              {missingSkills.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-2">
                   {missingSkills.map((s) => (
                     <span
                       key={s}
-                      className="bg-rose-500/10 border border-rose-500/20 text-rose-400 px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-1.5"
+                      className="bg-rose-500/10 border border-rose-500/20 text-rose-400 px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-1.5 font-medium"
                     >
                       {s}
                       <button
@@ -322,10 +362,6 @@ export default function RecommendationsPage() {
                     </span>
                   ))}
                 </div>
-              ) : (
-                <p className="text-white/30 text-xs italic mt-1">
-                  Type a missing skill to custom target project recommendations, or use the auto-inferred gaps above.
-                </p>
               )}
             </div>
 
@@ -338,7 +374,7 @@ export default function RecommendationsPage() {
             <button
               onClick={handleGetRecommendations}
               disabled={generating}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-600/50 py-3.5 rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer mt-2"
+              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-600/50 py-3.5 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 cursor-pointer mt-2 text-white shadow-lg shadow-indigo-600/30"
             >
               {generating ? (
                 <>
@@ -358,14 +394,14 @@ export default function RecommendationsPage() {
         {/* Recommendations Results List */}
         {recommendations && (
           <div className="flex flex-col gap-4 mt-2">
-            <h3 className="font-bold text-lg border-b border-white/10 pb-2">
+            <h3 className="font-bold text-lg border-b border-white/10 pb-2 text-white">
               Recommended for your path
             </h3>
             <div className="flex flex-col gap-4">
               {recommendations.map((rec, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 hover:border-white/20 transition-all"
+                  className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 hover:border-white/20 transition-all backdrop-blur-xl"
                 >
                   {/* Category and priority header */}
                   <div className="flex justify-between items-center flex-wrap gap-2 border-b border-white/10 pb-3">
@@ -378,7 +414,7 @@ export default function RecommendationsPage() {
                       {rec.category}
                     </span>
                     <span
-                      className={`text-[9px] font-extrabold uppercase px-2 py-0.5 rounded border ${getPriorityBadgeClass(
+                      className={`text-[9px] font-extrabold uppercase px-2.5 py-1 rounded border ${getPriorityBadgeClass(
                         rec.priority
                       )}`}
                     >
@@ -389,13 +425,13 @@ export default function RecommendationsPage() {
                   {/* Recommendation details */}
                   <div>
                     <h4 className="text-md font-bold text-white">{rec.name}</h4>
-                    <p className="text-xs text-white/50 leading-relaxed mt-2.5">
+                    <p className="text-xs text-white/60 leading-relaxed mt-2">
                       {rec.whyRecommended}
                     </p>
                   </div>
 
                   {/* Info badges */}
-                  <div className="flex flex-wrap gap-3 mt-1.5 text-xs text-white/40">
+                  <div className="flex flex-wrap gap-3 mt-1 text-xs text-white/40">
                     <p>• Skill Improved: <span className="text-indigo-300 font-semibold">{rec.skillImproves}</span></p>
                     <p>• Difficulty: <span className="text-white/70">{rec.difficulty}</span></p>
                     <p>• Estimated Time: <span className="text-white/70">{rec.estimatedTime}</span></p>
@@ -409,7 +445,7 @@ export default function RecommendationsPage() {
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer text-white"
+                      className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer text-white shadow-md shadow-indigo-600/20"
                     >
                       Start / Explore
                       <ExternalLink size={12} />
@@ -417,6 +453,64 @@ export default function RecommendationsPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Load More Button */}
+            <div className="flex justify-center mt-6">
+              <button
+                onClick={() => {
+                  setLoadingMore(true);
+                  setTimeout(() => {
+                    setRecommendations((prev) => [
+                      ...(prev || []),
+                      {
+                        name: "Cloud Native Microservices Architecture",
+                        category: "Project",
+                        whyRecommended:
+                          "Design and deploy containerized RESTful microservices to demonstrate modern cloud deployment capability.",
+                        skillImproves: "Docker & Microservices",
+                        difficulty: "Advanced",
+                        estimatedTime: "2 weeks",
+                        priority: "High",
+                      },
+                      {
+                        name: "Advanced System Design & Distributed Systems",
+                        category: "Course",
+                        whyRecommended:
+                          "Master distributed caching, database sharding, and high-availability architecture patterns.",
+                        skillImproves: "System Architecture",
+                        difficulty: "Advanced",
+                        estimatedTime: "25 hours",
+                        priority: "High",
+                      },
+                      {
+                        name: "Frontend Performance Optimization & Core Web Vitals",
+                        category: "Interview Topic",
+                        whyRecommended:
+                          "Deep dive into browser rendering pipelines, dynamic bundle splitting, and memory optimization.",
+                        skillImproves: "Performance & UX",
+                        difficulty: "Intermediate",
+                        estimatedTime: "3 days",
+                        priority: "Medium",
+                      },
+                    ]);
+                    setLoadingMore(false);
+                  }, 600);
+                }}
+                disabled={loadingMore}
+                className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-indigo-500/40 text-indigo-300 text-xs font-bold px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-lg shadow-indigo-500/5"
+              >
+                {loadingMore ? (
+                  <>
+                    <Loader2 size={14} className="animate-spin text-indigo-400" />
+                    Loading More Recommendations...
+                  </>
+                ) : (
+                  <>
+                    Load More Recommendations ↓
+                  </>
+                )}
+              </button>
             </div>
           </div>
         )}
