@@ -110,6 +110,15 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -419,6 +428,10 @@
 @utility animate-shimmer {
   background-size: 200% auto;
   animation: shimmer 4s linear infinite;
+}
+
+@utility animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 @utility animation-delay-2000 {

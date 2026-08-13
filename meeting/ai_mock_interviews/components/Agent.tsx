@@ -40,6 +40,7 @@ const Agent = ({
   const [isSpeaking,   setIsSpeaking]   = useState(false);
   const [userInput,    setUserInput]    = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showCallSetup, setShowCallSetup] = useState(false);
 
   const callActiveRef    = useRef(false);
   const historyRef       = useRef<SavedMessage[]>([]);
@@ -285,6 +286,37 @@ const Agent = ({
   };
 
   // ── Render ────────────────────────────────────────────────────────────────
+  if (!showCallSetup) {
+    return (
+      <div className="w-full bg-[#131525] border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div className="flex-1 flex flex-col items-start gap-4 z-10">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Get Interview-Ready<br />with AI-Powered<br />Practice & Feedback
+          </h2>
+          <p className="text-white/60 text-sm md:text-base">
+            Practice real interview questions & get instant feedback
+          </p>
+          <button
+            onClick={() => setShowCallSetup(true)}
+            className="mt-2 bg-[#b4b7f8] hover:bg-[#a2a6f5] text-[#131525] font-extrabold px-8 py-3 rounded-full transition-all text-sm cursor-pointer shadow-lg shadow-indigo-500/10 hover:shadow-indigo-500/20"
+          >
+            Start an interview
+          </button>
+        </div>
+        <div className="relative flex-1 max-w-[360px] md:max-w-[400px] w-full flex justify-center items-center">
+          <Image
+            src="/robot.png"
+            alt="AI Interviewer Robot"
+            width={400}
+            height={300}
+            className="object-contain animate-float"
+            priority
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       {/* Cards */}

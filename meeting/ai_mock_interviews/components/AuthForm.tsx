@@ -91,8 +91,13 @@ const AuthForm = ({ type }: { type: FormType }) => {
           idToken,
         });
 
+        if (typeof window !== "undefined") {
+          localStorage.clear();
+          sessionStorage.clear();
+        }
+
         toast.success("Signed in successfully.");
-        router.push("/");
+        window.location.href = "/";
       }
     } catch (error) {
       console.log(error);
