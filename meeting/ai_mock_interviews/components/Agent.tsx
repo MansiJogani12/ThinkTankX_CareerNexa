@@ -139,6 +139,17 @@ const Agent = ({
     setLastMessage("");
 
     try {
+      // Pre-acquire microphone access to guarantee active audio tracks are initialized
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      stream.getTracks().forEach((track) => track.stop());
+    } catch (micErr) {
+      console.error("Microphone access denied or error:", micErr);
+      toast.error("Microphone access is required to start the voice interview. Please enable it in your browser settings.");
+      setCallStatus(CallStatus.INACTIVE);
+      return;
+    }
+
+    try {
       if (type === "generate") {
         await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
           variableValues: {
