@@ -1,0 +1,2685 @@
+{
+  "users": [
+    {
+      "skillProfile": {
+        "technicalSkills": [
+          "Artificial Intelligence (AI)",
+          "Machine Learning (ML)",
+          "Robotics",
+          "Computer Vision",
+          "Data Analytics",
+          "Dashboard Analytics",
+          "Web Technologies",
+          "Embedded Systems",
+          "Biometric Systems",
+          "Object Detection",
+          "Security Surveillance",
+          "Real-time Monitoring",
+          "Problem-solving"
+        ],
+        "softSkills": [
+          "Team Work",
+          "Time Management",
+          "Creativity",
+          "Innovation",
+          "Presentation Skills"
+        ],
+        "toolsFrameworks": [
+          "ESP32",
+          "R307 Sensor",
+          "Jetson",
+          "Visualization Tools"
+        ],
+        "programmingLanguages": [
+          "C",
+          "C++",
+          "Python"
+        ],
+        "certifications": [],
+        "experienceLevel": "Junior",
+        "projects": [
+          {
+            "name": "Fingerprint Attendance System",
+            "description": "Built a biometric attendance system using ESP32 and R307 fingerprint sensor, implementing fingerprint enrollment, verification, real-time attendance logging, and integrating buzzer feedback for authentication status."
+          },
+          {
+            "name": "AI-Powered Smart Attendance & Learning Platform",
+            "description": "Developed an AI-based platform for automated attendance tracking and learning insights, generating real-time dashboards to monitor student engagement and performance trends, and providing data-driven recommendations for academic improvement."
+          },
+          {
+            "name": "Student Behaviour Analysis System",
+            "description": "Designed an AI-driven dashboard to analyze classroom behavior patterns, visualize engagement levels, noise trends, and performance insights, enabling institutions to make data-driven discipline and learning decisions."
+          },
+          {
+            "name": "SarvaNetra – Smart Security Surveillance Robot",
+            "description": "Built an autonomous surveillance robot for real-time monitoring, integrating camera-based object detection for smart threat analysis, and designed for security patrolling and remote monitoring applications."
+          }
+        ]
+      },
+      "atsAnalysis": {
+        "atsScore": 85,
+        "summary": "This resume demonstrates good ATS compatibility due to its clean formatting, standard structure, and effective use of keywords in project descriptions. The candidate's strong technical foundation in AI/ML and robotics is evident through their projects. To further enhance its ATS performance, key areas for improvement include expanding the 'Skills' section to be more exhaustive and removing the 'References' section.",
+        "strengths": [
+          "Clear and standard section headings are used, making it easy for ATS to parse.",
+          "Contact information is prominently placed at the top.",
+          "Bullet points are effectively used for project descriptions and achievements.",
+          "Strong use of relevant technical keywords (AI, ML, Robotics, Computer Vision) throughout the summary and projects.",
+          "Consistent and clean formatting with no complex visual elements that could confuse ATS.",
+          "Quantifiable achievements in the 'Awards' section are well-articulated."
+        ],
+        "suggestionsCount": 6
+      },
+      "id": "mock_uid",
+      "uid": "mock_uid"
+    }
+  ],
+  "interviews": [
+    {
+      "id": "1",
+      "userId": "system",
+      "role": "Frontend Developer",
+      "type": "Technical",
+      "techstack": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "level": "Junior",
+      "questions": [
+        "What is React?",
+        "Explain useEffect.",
+        "What are props?"
+      ],
+      "finalized": true,
+      "createdAt": "2024-03-15T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "userId": "system",
+      "role": "Full Stack Developer",
+      "type": "Mixed",
+      "techstack": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "React"
+      ],
+      "level": "Senior",
+      "questions": [
+        "What is Node.js?",
+        "Explain REST APIs.",
+        "How does event loop work?"
+      ],
+      "finalized": true,
+      "createdAt": "2024-03-14T15:30:00Z"
+    },
+    {
+      "role": "Data Engineering",
+      "type": "Technical",
+      "level": "Junior",
+      "techstack": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "ETL",
+        "Data Warehousing",
+        "Databases",
+        "Apache Spark",
+        "Git"
+      ],
+      "questions": [
+        "What is Data Engineering and what does a Data Engineer do? What is the difference between OLTP and OLAP databases? What is ETL? Explain the three stages of an ETL pipeline. What is the difference between ETL and ELT? What is database normalization and why is it important?"
+      ],
+      "userId": "system",
+      "finalized": true,
+      "createdAt": "2026-08-11T01:57:09.682Z",
+      "id": "0.6926807265886152",
+      "uid": "0.6926807265886152"
+    }
+  ],
+  "feedback": [
+    {
+      "interviewId": "2",
+      "userId": "mock_uid",
+      "totalScore": 78,
+      "categoryScores": [
+        {
+          "name": "Communication Skills",
+          "score": 82,
+          "comment": "The candidate explained concepts clearly but sometimes spoke too quickly when explaining complex topics."
+        },
+        {
+          "name": "Technical Knowledge",
+          "score": 75,
+          "comment": "Demonstrated solid understanding of core principles, though some advanced system design details were omitted."
+        },
+        {
+          "name": "Answer Quality",
+          "score": 80,
+          "comment": "Structured answers well using the STAR method. Bullet points in the explanation of past experiences were impactful."
+        },
+        {
+          "name": "Confidence and Clarity",
+          "score": 76,
+          "comment": "Projected confidence and maintained a professional tone. Clarity of response was high under pressure."
+        }
+      ],
+      "strengths": [
+        "Strong grasp of foundational principles relevant to the role.",
+        "Clear articulation of architectural choices in past projects.",
+        "Professional communication style and active listening."
+      ],
+      "weaknesses": [
+        "Could improve on explaining database indexing choices.",
+        "Occasionally rushed through complex technical problem descriptions."
+      ],
+      "areasForImprovement": [
+        "Practice deep-dives on database performance tuning and caching mechanisms (Redis).",
+        "Structure high-level designs more systematically before coding."
+      ],
+      "improvementSuggestions": [
+        "When asked a technical question, pause for 5-10 seconds to structure your answer before speaking.",
+        "Include metrics/impact numbers when describing project achievements."
+      ],
+      "recommendedTopics": [
+        "System Design & Scalability Patterns",
+        "Database Sharding and Indexing",
+        "State Management & Performance Optimization"
+      ],
+      "finalAssessment": "Overall, the candidate performed well, demonstrating strong communication skills and good foundational technical knowledge for a Full Stack Developer role. With additional preparation in advanced backend/system design patterns, they will be a highly competitive applicant.",
+      "createdAt": "2026-08-11T17:55:55.869Z",
+      "id": "0.319286068652489",
+      "uid": "0.319286068652489"
+    },
+    {
+      "interviewId": "1",
+      "userId": "mock_uid",
+      "totalScore": 78,
+      "categoryScores": [
+        {
+          "name": "Communication Skills",
+          "score": 82,
+          "comment": "The candidate explained concepts clearly but sometimes spoke too quickly when explaining complex topics."
+        },
+        {
+          "name": "Technical Knowledge",
+          "score": 75,
+          "comment": "Demonstrated solid understanding of core principles, though some advanced system design details were omitted."
+        },
+        {
+          "name": "Answer Quality",
+          "score": 80,
+          "comment": "Structured answers well using the STAR method. Bullet points in the explanation of past experiences were impactful."
+        },
+        {
+          "name": "Confidence and Clarity",
+          "score": 76,
+          "comment": "Projected confidence and maintained a professional tone. Clarity of response was high under pressure."
+        }
+      ],
+      "strengths": [
+        "Strong grasp of foundational principles relevant to the role.",
+        "Clear articulation of architectural choices in past projects.",
+        "Professional communication style and active listening."
+      ],
+      "weaknesses": [
+        "Could improve on explaining database indexing choices.",
+        "Occasionally rushed through complex technical problem descriptions."
+      ],
+      "areasForImprovement": [
+        "Practice deep-dives on database performance tuning and caching mechanisms (Redis).",
+        "Structure high-level designs more systematically before coding."
+      ],
+      "improvementSuggestions": [
+        "When asked a technical question, pause for 5-10 seconds to structure your answer before speaking.",
+        "Include metrics/impact numbers when describing project achievements."
+      ],
+      "recommendedTopics": [
+        "System Design & Scalability Patterns",
+        "Database Sharding and Indexing",
+        "State Management & Performance Optimization"
+      ],
+      "finalAssessment": "Overall, the candidate performed well, demonstrating strong communication skills and good foundational technical knowledge for a Frontend Developer role. With additional preparation in advanced backend/system design patterns, they will be a highly competitive applicant.",
+      "createdAt": "2026-08-14T03:22:52.668Z",
+      "id": "0.2859449173101364",
+      "uid": "0.2859449173101364"
+    },
+    {
+      "interviewId": "0.6926807265886152",
+      "userId": "mock_uid",
+      "totalScore": 78,
+      "categoryScores": [
+        {
+          "name": "Communication Skills",
+          "score": 82,
+          "comment": "The candidate explained concepts clearly but sometimes spoke too quickly when explaining complex topics."
+        },
+        {
+          "name": "Technical Knowledge",
+          "score": 75,
+          "comment": "Demonstrated solid understanding of core principles, though some advanced system design details were omitted."
+        },
+        {
+          "name": "Answer Quality",
+          "score": 80,
+          "comment": "Structured answers well using the STAR method. Bullet points in the explanation of past experiences were impactful."
+        },
+        {
+          "name": "Confidence and Clarity",
+          "score": 76,
+          "comment": "Projected confidence and maintained a professional tone. Clarity of response was high under pressure."
+        }
+      ],
+      "strengths": [
+        "Strong grasp of foundational principles relevant to the role.",
+        "Clear articulation of architectural choices in past projects.",
+        "Professional communication style and active listening."
+      ],
+      "weaknesses": [
+        "Could improve on explaining database indexing choices.",
+        "Occasionally rushed through complex technical problem descriptions."
+      ],
+      "areasForImprovement": [
+        "Practice deep-dives on database performance tuning and caching mechanisms (Redis).",
+        "Structure high-level designs more systematically before coding."
+      ],
+      "improvementSuggestions": [
+        "When asked a technical question, pause for 5-10 seconds to structure your answer before speaking.",
+        "Include metrics/impact numbers when describing project achievements."
+      ],
+      "recommendedTopics": [
+        "System Design & Scalability Patterns",
+        "Database Sharding and Indexing",
+        "State Management & Performance Optimization"
+      ],
+      "finalAssessment": "Overall, the candidate performed well, demonstrating strong communication skills and good foundational technical knowledge for a Data Engineering role. With additional preparation in advanced backend/system design patterns, they will be a highly competitive applicant.",
+      "createdAt": "2026-08-13T14:19:17.393Z",
+      "id": "0.9253778969901867",
+      "uid": "0.9253778969901867"
+    }
+  ],
+  "scoreCache": [
+    {
+      "result": {
+        "atsScore": 85,
+        "scoreBreakdown": {
+          "formatting": {
+            "score": 90,
+            "feedback": "Clean, standard formatting with bullet points, clear headings, and good readability. No complex elements like tables or graphics. A minor inconsistent character was noted."
+          },
+          "keywords": {
+            "score": 80,
+            "feedback": "Good use of core technical keywords in projects and summary. However, the dedicated 'Skills' section is very brief and doesn't capture all implied technologies or specific tools/frameworks."
+          },
+          "structure": {
+            "score": 85,
+            "feedback": "Standard section ordering and clear headings. Contact information is well-placed. The inclusion of a 'References' section is generally not recommended for initial ATS screenings and adds unnecessary length."
+          },
+          "readability": {
+            "score": 88,
+            "feedback": "Easy to read with a clear font, good spacing, and effective use of bullet points. Descriptions are concise and to the point."
+          }
+        },
+        "suggestions": [
+          {
+            "category": "Structure",
+            "issue": "The 'REFERENCES' section is included, which is typically provided upon request and adds unnecessary length to a resume for initial ATS screening.",
+            "recommendation": "Remove the 'REFERENCES' section entirely. This will help keep the resume concise, ideally to one page for an early-career candidate, and prevent ATS from parsing irrelevant contact information.",
+            "priority": "high"
+          },
+          {
+            "category": "Keywords / Content",
+            "issue": "The 'SKILLS' section is underdeveloped and does not comprehensively list all technical tools, frameworks, and specific technologies mentioned within project descriptions.",
+            "recommendation": "Expand the 'SKILLS' section significantly. Create subsections for 'Programming Languages,' 'Frameworks/Libraries' (e.g., TensorFlow, Keras, scikit-learn, Flask, React), 'Tools/Platforms' (e.g., Git, Docker, AWS/GCP/Azure, ESP32, Jetson), 'Databases,' etc. Consolidate all relevant technologies from projects here.",
+            "priority": "high"
+          },
+          {
+            "category": "Content",
+            "issue": "Project descriptions, while informative, could benefit from more quantifiable achievements to demonstrate impact and results.",
+            "recommendation": "For each project, try to include specific numbers or metrics where possible (e.g., 'Improved accuracy by X%', 'Processed Y amount of data', 'Reduced Z time'). This helps an ATS identify concrete contributions.",
+            "priority": "medium"
+          },
+          {
+            "category": "Formatting / Structure",
+            "issue": "Inconsistent date formatting for projects (e.g., '2024', '2026') and an unusual character ('[Q]') next to the date for the 'Fingerprint Attendance System'. '2026' and '2025' might imply future projects without clear context.",
+            "recommendation": "Ensure all project dates are consistently formatted (e.g., 'Month YYYY – Month YYYY' or 'Month YYYY – Present'). Clarify if '2026' and '2025' are planned completion dates by adding 'Expected Completion' or 'Ongoing'. Correct or remove the '[Q]' character.",
+            "priority": "medium"
+          },
+          {
+            "category": "Keywords",
+            "issue": "The resume, while strong in core areas, could be further optimized by tailoring keywords to specific job descriptions.",
+            "recommendation": "Before applying, carefully review the job description for target keywords (e.g., specific algorithms, cloud services, methodologies) and integrate them naturally into your summary, skills, and project bullet points.",
+            "priority": "high"
+          },
+          {
+            "category": "Content",
+            "issue": "The 'Soft Skills' are listed generally but could be reinforced with examples in projects or a professional summary.",
+            "recommendation": "Consider integrating soft skills into project descriptions by describing how 'Team Work' or 'Problem-solving' contributed to project success, rather than just listing them. This provides context for the ATS.",
+            "priority": "low"
+          }
+        ],
+        "strengths": [
+          "Clear and standard section headings are used, making it easy for ATS to parse.",
+          "Contact information is prominently placed at the top.",
+          "Bullet points are effectively used for project descriptions and achievements.",
+          "Strong use of relevant technical keywords (AI, ML, Robotics, Computer Vision) throughout the summary and projects.",
+          "Consistent and clean formatting with no complex visual elements that could confuse ATS.",
+          "Quantifiable achievements in the 'Awards' section are well-articulated."
+        ],
+        "summary": "This resume demonstrates good ATS compatibility due to its clean formatting, standard structure, and effective use of keywords in project descriptions. The candidate's strong technical foundation in AI/ML and robotics is evident through their projects. To further enhance its ATS performance, key areas for improvement include expanding the 'Skills' section to be more exhaustive and removing the 'References' section.",
+        "skillsExtracted": {
+          "technicalSkills": [
+            "Artificial Intelligence (AI)",
+            "Machine Learning (ML)",
+            "Robotics",
+            "Computer Vision",
+            "Data Analytics",
+            "Dashboard Analytics",
+            "Web Technologies",
+            "Embedded Systems",
+            "Biometric Systems",
+            "Object Detection",
+            "Security Surveillance",
+            "Real-time Monitoring",
+            "Problem-solving"
+          ],
+          "softSkills": [
+            "Team Work",
+            "Time Management",
+            "Creativity",
+            "Innovation",
+            "Presentation Skills"
+          ],
+          "toolsFrameworks": [
+            "ESP32",
+            "R307 Sensor",
+            "Jetson",
+            "Visualization Tools"
+          ],
+          "programmingLanguages": [
+            "C",
+            "C++",
+            "Python"
+          ],
+          "certifications": [],
+          "experienceLevel": "Junior",
+          "projects": [
+            {
+              "name": "Fingerprint Attendance System",
+              "description": "Built a biometric attendance system using ESP32 and R307 fingerprint sensor, implementing fingerprint enrollment, verification, real-time attendance logging, and integrating buzzer feedback for authentication status."
+            },
+            {
+              "name": "AI-Powered Smart Attendance & Learning Platform",
+              "description": "Developed an AI-based platform for automated attendance tracking and learning insights, generating real-time dashboards to monitor student engagement and performance trends, and providing data-driven recommendations for academic improvement."
+            },
+            {
+              "name": "Student Behaviour Analysis System",
+              "description": "Designed an AI-driven dashboard to analyze classroom behavior patterns, visualize engagement levels, noise trends, and performance insights, enabling institutions to make data-driven discipline and learning decisions."
+            },
+            {
+              "name": "SarvaNetra – Smart Security Surveillance Robot",
+              "description": "Built an autonomous surveillance robot for real-time monitoring, integrating camera-based object detection for smart threat analysis, and designed for security patrolling and remote monitoring applications."
+            }
+          ]
+        }
+      },
+      "id": "mock_uid_3a023c47e766f955dcf3d04508e7e99a72de55868078265cf111b774d842e6c7",
+      "uid": "mock_uid_3a023c47e766f955dcf3d04508e7e99a72de55868078265cf111b774d842e6c7"
+    },
+    {
+      "result": {
+        "summary": "The candidate's strong SQL skills combined with practical experience as a Database Manager indicate a deep understanding of database administration, performance, data integrity, and complex querying. This profile is exceptionally well-suited for roles focused on managing, optimizing, and developing robust data infrastructure across various industries.",
+        "jobs": [
+          {
+            "title": "Database Administrator (DBA)",
+            "company": "Enterprise-level companies, Tech firms, Financial institutions",
+            "matchScore": 53,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Database Management Systems (DBMS)",
+              "Performance Tuning",
+              "Backup & Recovery"
+            ],
+            "whyMatch": "This is a direct match for a Database Manager, focusing on the core responsibilities of maintaining database health, security, and performance. SQL is fundamental for daily operations and troubleshooting.",
+            "applyTip": "Showcase specific experience with different DBMS (e.g., SQL Server, MySQL, PostgreSQL, Oracle) and any cloud database administration knowledge."
+          },
+          {
+            "title": "SQL Developer",
+            "company": "Software companies, Product development firms, Data-driven businesses",
+            "matchScore": 53,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Query Optimization",
+              "Stored Procedures",
+              "Data Modeling"
+            ],
+            "whyMatch": "A Database Manager frequently writes and optimizes complex SQL queries, stored procedures, and scripts for data manipulation and reporting. This role leverages that development aspect extensively.",
+            "applyTip": "Prepare a portfolio or be ready to discuss examples of complex SQL queries, database objects created, and performance optimization techniques applied."
+          },
+          {
+            "title": "Data Warehouse Developer / ETL Developer",
+            "company": "Consulting firms, Large enterprises, E-commerce companies",
+            "matchScore": 53,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Warehousing",
+              "ETL Tools (e.g., SSIS, Talend)",
+              "Data Modeling"
+            ],
+            "whyMatch": "Database Managers often deal with data integration, migration, and structuring data for reporting. Their SQL expertise is crucial for designing and implementing ETL processes and maintaining data warehouses.",
+            "applyTip": "Highlight any experience with data migration, building reporting structures, or specific ETL tools used in previous roles."
+          },
+          {
+            "title": "Data Analyst (SQL Focused)",
+            "company": "Any industry with significant data, Marketing agencies, Healthcare",
+            "matchScore": 53,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Extraction",
+              "Data Cleaning",
+              "Reporting"
+            ],
+            "whyMatch": "While primarily management, the database manager's strong SQL skills and understanding of data structures provide an excellent foundation for extracting, cleaning, and preparing data for analytical purposes.",
+            "applyTip": "Emphasize how your database management experience ensures data integrity and accuracy, and consider learning a data visualization tool like Tableau or Power BI."
+          },
+          {
+            "title": "Junior/Mid-level Data Engineer",
+            "company": "Tech startups, Large organizations with data platforms, Cloud service providers",
+            "matchScore": 53,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Database Design",
+              "Data Pipelines",
+              "Basic Python"
+            ],
+            "whyMatch": "The foundational skills of a Database Manager in database design, performance, and data integrity are crucial for data engineering. This role represents a natural progression into building and maintaining data pipelines.",
+            "applyTip": "Showcase any proactive learning or projects involving Python scripting for data tasks or familiarity with cloud platforms (AWS, Azure, GCP)."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_92c4ff5c2982875baea082519c4d90330f40f624dc3da38ff17cec437068ce49",
+      "uid": "mock_uid_jobmatch_92c4ff5c2982875baea082519c4d90330f40f624dc3da38ff17cec437068ce49"
+    },
+    {
+      "result": {
+        "summary": "This candidate uniquely combines strong frontend development skills with React and deep experience in database management. This profile is ideal for roles that require building interactive user interfaces for data-intensive applications, or full-stack positions where a solid understanding of both UI and data persistence is crucial.",
+        "jobs": [
+          {
+            "title": "Full Stack Developer (React & Node.js/Python)",
+            "company": "Startups, Mid-sized Product companies, Consultancies",
+            "matchScore": 57,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "Node.js/Python",
+              "SQL/NoSQL"
+            ],
+            "whyMatch": "This role directly leverages both core competencies: React for building robust frontends and database management experience for designing, implementing, and optimizing backend data structures and APIs.",
+            "applyTip": "Showcase a portfolio with projects that demonstrate end-to-end development, specifically highlighting how React interfaces interact with data managed by your backend solutions."
+          },
+          {
+            "title": "Frontend Developer (Data-Intensive Applications)",
+            "company": "Fintech, E-commerce, SaaS companies",
+            "matchScore": 57,
+            "location": "Remote / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "State Management",
+              "API Integration"
+            ],
+            "whyMatch": "While primarily frontend, your database management background provides a significant advantage in understanding complex data models, optimizing API calls, and effectively managing state for data-heavy user interfaces built with React.",
+            "applyTip": "Emphasize experience in building UIs that handle large datasets, complex filtering, sorting, and real-time data updates, detailing how your database knowledge informed these solutions."
+          },
+          {
+            "title": "Data Visualization Engineer",
+            "company": "Data Analytics firms, Business Intelligence departments, Tech companies",
+            "matchScore": 57,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "D3.js/Chart.js",
+              "Data Modeling"
+            ],
+            "whyMatch": "This role perfectly bridges your skills, using React to build interactive and insightful data dashboards and visualizations, while your database manager experience ensures a deep understanding of the underlying data sources and structures.",
+            "applyTip": "Create a portfolio specifically demonstrating React-based data visualization projects, perhaps integrating with real or mocked datasets, and explain your process for data preparation and presentation."
+          },
+          {
+            "title": "Software Engineer, Data Platform UI/Tools",
+            "company": "Cloud providers, Large Enterprises, Data-focused SaaS",
+            "matchScore": 57,
+            "location": "On-site / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "SQL/NoSQL",
+              "Cloud Platforms"
+            ],
+            "whyMatch": "In this role, you would be developing internal tools, admin panels, or user interfaces for data platforms. Your database expertise is core to understanding the platform's functionality, and React enables efficient UI development for these tools.",
+            "applyTip": "Highlight projects where you built internal admin interfaces or tools that interacted with complex backend systems or databases, focusing on functionality and user experience for technical users."
+          },
+          {
+            "title": "Backend Developer (with Admin UI focus)",
+            "company": "Mid-sized Product companies, Enterprises",
+            "matchScore": 57,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "Database Administration",
+              "API Development",
+              "React (for internal tools)"
+            ],
+            "whyMatch": "Your primary strength as a database manager is highly valued here for backend development and data architecture. The React skill is a strong asset for building internal administrative interfaces or proof-of-concept UIs to manage and interact with data.",
+            "applyTip": "Focus your resume on your strong database design and management capabilities, but ensure to include any projects where you built React-based internal tools or admin dashboards for backend systems."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_4befddbcea6ab2f64a4c3dad3670dff2a5be0b8a3bf8593bd7b68318cd1740b8",
+      "uid": "mock_uid_jobmatch_4befddbcea6ab2f64a4c3dad3670dff2a5be0b8a3bf8593bd7b68318cd1740b8"
+    },
+    {
+      "result": {
+        "summary": "This candidate profile presents a strong combination of SQL proficiency for data analysis and UI/UX experience for understanding user behavior and design. This unique blend is highly valuable in today's market for roles that require data-driven insights to inform product design, user experience optimization, and strategic decision-making.",
+        "jobs": [
+          {
+            "title": "Product Analyst",
+            "company": "Product companies, Tech startups",
+            "matchScore": 48,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "A/B Testing",
+              "Product Analytics",
+              "User Behavior Analysis",
+              "Data Visualization",
+              "UI/UX principles"
+            ],
+            "whyMatch": "This role directly leverages both SQL for analyzing product usage data and UX experience for interpreting user behavior, identifying pain points, and recommending features or improvements based on insights.",
+            "applyTip": "Showcase projects where you used SQL to analyze user data and translate findings into actionable recommendations for product or design teams."
+          },
+          {
+            "title": "UX Researcher (Quantitative/Mixed Methods)",
+            "company": "Large tech companies, Product-led organizations, Research agencies",
+            "matchScore": 47,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Quantitative Research",
+              "Qualitative Research",
+              "Survey Design",
+              "Statistical Analysis",
+              "User Testing",
+              "UI/UX principles"
+            ],
+            "whyMatch": "While core UX research is qualitative, the SQL skill allows for robust quantitative analysis of user data (e.g., surveys, A/B test results, usage logs), providing a powerful mixed-methods approach to understanding user needs.",
+            "applyTip": "Highlight experience in designing and analyzing quantitative user studies, emphasizing how SQL helped validate qualitative findings or identify new research areas."
+          },
+          {
+            "title": "Data Analyst (Product & User Experience Focus)",
+            "company": "Startups, Mid-sized tech companies, E-commerce",
+            "matchScore": 47,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Extraction",
+              "Data Modeling",
+              "Dashboarding",
+              "User Journey Mapping",
+              "KPI Definition",
+              "UI/UX understanding"
+            ],
+            "whyMatch": "The candidate's SQL proficiency is central to this role for data querying and analysis, while their UX background provides critical context for interpreting data related to user journeys, product engagement, and experience metrics.",
+            "applyTip": "Prepare a portfolio demonstrating how you've used SQL to create dashboards or reports that directly influenced product or design decisions."
+          },
+          {
+            "title": "Growth Analyst / Growth Product Manager (Analytics-Focused)",
+            "company": "SaaS companies, E-commerce, Marketplaces",
+            "matchScore": 47,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "A/B Testing",
+              "Conversion Rate Optimization (CRO)",
+              "Funnel Analysis",
+              "Marketing Analytics",
+              "User Acquisition",
+              "UI/UX understanding"
+            ],
+            "whyMatch": "SQL is essential for tracking and optimizing growth metrics across the user lifecycle (acquisition, activation, retention), and the UX background helps in understanding user motivation and identifying friction points for optimization.",
+            "applyTip": "Describe specific instances where your data analysis skills led to measurable improvements in user engagement, conversion rates, or retention."
+          },
+          {
+            "title": "Data-Driven UX Designer / Product Designer (with Analytics Expertise)",
+            "company": "Product companies, Tech startups aiming for data-informed design",
+            "matchScore": 47,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "UI/UX Design",
+              "Wireframing & Prototyping",
+              "User Research",
+              "SQL",
+              "A/B Testing",
+              "Design Systems",
+              "Data Visualization (for design insights)"
+            ],
+            "whyMatch": "This role leverages the candidate's primary UX experience, with SQL skills enabling them to independently pull data to inform design decisions, validate hypotheses with quantitative evidence, and measure the impact of their designs directly.",
+            "applyTip": "Include case studies in your design portfolio that explicitly detail how data (and specifically SQL insights) influenced your design choices and outcomes."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_5ee59cf8b61d3347c7ce2cafa832530d3021a3835f757b26b2c476ae2e150a71",
+      "uid": "mock_uid_jobmatch_5ee59cf8b61d3347c7ce2cafa832530d3021a3835f757b26b2c476ae2e150a71"
+    },
+    {
+      "result": {
+        "atsScore": 82,
+        "scoreBreakdown": {
+          "formatting": {
+            "score": 90,
+            "feedback": "Clean layout, but consider using standard fonts."
+          },
+          "keywords": {
+            "score": 75,
+            "feedback": "Missing some industry-standard keywords."
+          },
+          "structure": {
+            "score": 85,
+            "feedback": "Good logical flow of sections."
+          },
+          "readability": {
+            "score": 80,
+            "feedback": "Bullet points are slightly too long."
+          }
+        },
+        "suggestions": [
+          {
+            "category": "Keywords",
+            "issue": "Missing key technical terms for modern web development.",
+            "recommendation": "Add terms like 'TypeScript', 'Next.js', and 'GraphQL' if applicable.",
+            "priority": "high"
+          },
+          {
+            "category": "Formatting",
+            "issue": "Non-standard bullet points.",
+            "recommendation": "Use standard round bullets to ensure ATS parses them correctly.",
+            "priority": "medium"
+          }
+        ],
+        "strengths": [
+          "Clear section headings",
+          "Consistent date formatting",
+          "Strong action verbs used in experience section"
+        ],
+        "summary": "Your resume is generally ATS-friendly but needs more targeted keywords to pass higher thresholds. Structurally, it is sound and easy for parsers to read.",
+        "skillsExtracted": {
+          "technicalSkills": [
+            "Frontend Development",
+            "React State Management",
+            "Tailwind CSS Layouts",
+            "API Integration",
+            "Webpack Build Systems"
+          ],
+          "softSkills": [
+            "Team Collaboration",
+            "Problem Solving",
+            "Adaptability",
+            "Active Listening"
+          ],
+          "toolsFrameworks": [
+            "React.js",
+            "Next.js",
+            "Git",
+            "Webpack",
+            "Vite",
+            "ESLint"
+          ],
+          "programmingLanguages": [
+            "JavaScript",
+            "TypeScript",
+            "HTML5",
+            "CSS3"
+          ],
+          "certifications": [
+            "Meta Frontend Developer Professional Certificate"
+          ],
+          "experienceLevel": "Mid",
+          "projects": [
+            {
+              "name": "E-Commerce Admin Dashboard",
+              "description": "Built a robust administrative dashboard using React, Tailwind CSS, and Recharts to visualize sales metrics and manage product inventories."
+            },
+            {
+              "name": "Real-time Chat App",
+              "description": "Developed a secure messaging platform with WebSockets integration to support instant messaging and channel broadcasts."
+            }
+          ]
+        }
+      },
+      "id": "mock_uid_29804634a1e91925f7bfd6849deac30bf3b7d74087946e3a0d84d61582275c25",
+      "uid": "mock_uid_29804634a1e91925f7bfd6849deac30bf3b7d74087946e3a0d84d61582275c25"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          },
+          {
+            "title": "Frontend Developer",
+            "company": "Product Companies",
+            "matchScore": 88,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "Tailwind CSS",
+              "Next.js"
+            ],
+            "whyMatch": "Your strong UI/UX implementation skills make you an ideal candidate.",
+            "applyTip": "Include a link to your portfolio showcasing complex UI components."
+          },
+          {
+            "title": "Full Stack Developer",
+            "company": "MNCs",
+            "matchScore": 85,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "JavaScript",
+              "PostgreSQL",
+              "Express",
+              "Docker"
+            ],
+            "whyMatch": "Your knowledge across both frontend and database technologies fits their stack well.",
+            "applyTip": "Emphasize your ability to work on end-to-end features independently."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_cee7828aa58740f20e72a4bcf7f7a5c1fe12a7420933762f11fe03ec73eb748d",
+      "uid": "mock_uid_jobmatch_cee7828aa58740f20e72a4bcf7f7a5c1fe12a7420933762f11fe03ec73eb748d"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_410c757db7550ed03c60afb0d0bab38bb6555bcbb2c8a5eebaeddfa7f2aa83e3",
+      "uid": "mock_uid_jobmatch_410c757db7550ed03c60afb0d0bab38bb6555bcbb2c8a5eebaeddfa7f2aa83e3"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_5e9e055960a671d0f3c660bee9e1c6fa06619def590b10f08236b9371efdf858",
+      "uid": "mock_uid_jobmatch_5e9e055960a671d0f3c660bee9e1c6fa06619def590b10f08236b9371efdf858"
+    },
+    {
+      "result": {
+        "summary": "Based on your demo profile, you have a strong background in software development. These roles are a great fit for your current skill set.",
+        "jobs": [
+          {
+            "title": "Senior Software Engineer",
+            "company": "Tech Startups",
+            "matchScore": 92,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "TypeScript",
+              "Node.js",
+              "AWS"
+            ],
+            "whyMatch": "Your extensive experience with scalable web apps aligns perfectly with this role's requirements.",
+            "applyTip": "Highlight your most impactful project involving backend scaling in your cover letter."
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_f0565ebf331ebf48d8c2ad35b3c2abb34312b2e1b061585bb5fc05646e129c03",
+      "uid": "mock_uid_jobmatch_f0565ebf331ebf48d8c2ad35b3c2abb34312b2e1b061585bb5fc05646e129c03"
+    },
+    {
+      "result": {
+        "summary": "The candidate's profile as a Frontend Developer with strong React and SQL skills presents an excellent match for various frontend-focused and full-stack engineering roles. While direct matches are strong, the SQL skill also opens opportunities in data-related positions, and their development background offers transferable skills for quality assurance and potentially backend or even DevOps roles with a strategic application approach.",
+        "jobs": [
+          {
+            "title": "Full Stack Engineer",
+            "company": "Accenture",
+            "location": "Pune, India",
+            "type": "Full-time",
+            "applyUrl": "https://accenture.com/careers",
+            "employerWebsite": "https://accenture.com",
+            "skills": [
+              "Full Stack Development",
+              "Frontend Development",
+              "Backend Development",
+              "React",
+              "SQL"
+            ],
+            "whyMatch": "This role is an excellent fit, leveraging the candidate's React expertise for frontend and SQL for database interactions, forming two critical pillars of full-stack development. Their frontend experience provides a strong foundation.",
+            "applyTip": "Showcase personal projects or work where you've handled both frontend (React) and database (SQL) components, even if backend logic was minimal, demonstrating your full-stack potential and eagerness to expand.",
+            "matchScore": 60,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "Full Stack Engineer",
+            "company": "Meesho",
+            "location": "Mumbai, India",
+            "type": "Hybrid",
+            "applyUrl": "https://meesho.com/careers",
+            "employerWebsite": "https://meesho.com",
+            "skills": [
+              "Full Stack Development",
+              "Frontend Development",
+              "Backend Development",
+              "React",
+              "SQL"
+            ],
+            "whyMatch": "This is another strong match. The candidate possesses both React for frontend development and SQL for database interactions, making them well-suited for a full-stack role, with their existing frontend experience as a solid base.",
+            "applyTip": "Highlight any projects where you connected a React frontend to a SQL database, demonstrating your ability to work across the stack. Express enthusiasm for building end-to-end solutions.",
+            "matchScore": 60,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "Frontend Developer",
+            "company": "Accenture",
+            "location": "Surat, India",
+            "type": "Full-time",
+            "applyUrl": "https://accenture.com/careers",
+            "employerWebsite": "https://accenture.com",
+            "skills": [
+              "Frontend Development",
+              "React",
+              "UI/UX Implementation",
+              "Cutting-edge Technologies",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "This role is a direct and strong match for the candidate's existing experience as a Frontend Developer and their proficiency in React, aligning perfectly with the job title and typical responsibilities.",
+            "applyTip": "Highlight specific React projects on your resume and portfolio, detailing how you've built scalable frontend solutions and improved user experiences.",
+            "matchScore": 50,
+            "distanceCategory": "Same City"
+          },
+          {
+            "title": "Data Scientist",
+            "company": "CRED",
+            "location": "Surat, India",
+            "type": "Hybrid",
+            "applyUrl": "https://cred.com/careers",
+            "employerWebsite": "https://cred.com",
+            "skills": [
+              "Data Science",
+              "SQL",
+              "Data Analysis",
+              "Statistical Modeling",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "The candidate's SQL skill is a direct and valuable asset for a Data Scientist role, as data querying and manipulation are fundamental. Their developer mindset can also aid in implementing data models.",
+            "applyTip": "Focus your resume on any projects or experiences where you utilized SQL for complex data extraction, analysis, or reporting, even if it was within a frontend context. Express a keen interest in data science.",
+            "matchScore": 50,
+            "distanceCategory": "Same City"
+          },
+          {
+            "title": "Frontend Developer",
+            "company": "Postman",
+            "location": "Rajkot, India",
+            "type": "Full-time",
+            "applyUrl": "https://postman.com/careers",
+            "employerWebsite": "https://postman.com",
+            "skills": [
+              "Frontend Development",
+              "React",
+              "API Integration",
+              "User Interface Design",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "This is a perfect match for the candidate. Their Frontend Developer experience and React skill directly align with the role. Working at Postman suggests a strong emphasis on API interaction, a common frontend task.",
+            "applyTip": "Showcase your most impressive React projects, especially those involving complex API integrations or building highly interactive user interfaces. Mention any experience with testing or consuming APIs.",
+            "matchScore": 50,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "Backend Developer",
+            "company": "Paytm",
+            "location": "Pune, India",
+            "type": "Full-time",
+            "applyUrl": "https://paytm.com/careers",
+            "employerWebsite": "https://paytm.com",
+            "skills": [
+              "Backend Development",
+              "API Design",
+              "Database Management",
+              "SQL",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "The candidate's strong SQL skill is highly relevant for a Backend Developer role, especially in database interaction and management. Their frontend experience also provides valuable insight into API consumption and design from a user's perspective.",
+            "applyTip": "Focus on your SQL expertise, detailing complex queries, database schema contributions, or performance optimizations. Emphasize your desire to transition to backend and how your frontend experience informs robust API development.",
+            "matchScore": 50,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "QA Engineer",
+            "company": "Tech Mahindra",
+            "location": "Surat, India",
+            "type": "Full-time",
+            "applyUrl": "https://techmahindra.com/careers",
+            "employerWebsite": "https://techmahindra.com",
+            "skills": [
+              "Quality Assurance",
+              "Testing Methodologies",
+              "Debugging",
+              "Cutting-edge Technologies",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "While not a direct match, the candidate's frontend development experience provides a strong understanding of web application architecture and UI functionality, which is highly beneficial for testing. Their SQL skill can also be valuable for database testing.",
+            "applyTip": "Emphasize any experience with testing tools, debugging processes, or contributing to test plans from your frontend roles, and highlight your analytical approach to problem-solving.",
+            "matchScore": 40,
+            "distanceCategory": "Same City"
+          },
+          {
+            "title": "UI/UX Designer",
+            "company": "Accenture",
+            "location": "Rajkot, India",
+            "type": "Full-time",
+            "applyUrl": "https://accenture.com/careers",
+            "employerWebsite": "https://accenture.com",
+            "skills": [
+              "UI Design",
+              "UX Principles",
+              "User Research",
+              "Prototyping",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "While primarily a developer, the candidate's frontend experience means they frequently implement UI/UX designs and understand user interaction, offering a practical perspective on design principles.",
+            "applyTip": "Highlight your experience in implementing user-centric interfaces with React and any instances where you collaborated with designers or contributed to design discussions from a technical viewpoint.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "QA Engineer",
+            "company": "IBM India",
+            "location": "Vadodara, India",
+            "type": "Full-time",
+            "applyUrl": "https://ibmindia.com/careers",
+            "employerWebsite": "https://ibmindia.com",
+            "skills": [
+              "Quality Assurance",
+              "Testing Methodologies",
+              "Test Automation",
+              "Cutting-edge Technologies",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "Similar to the other QA role, the candidate's frontend development background equips them with strong debugging skills and an understanding of how applications should function, making them a valuable asset to a QA team. SQL is useful for data validation.",
+            "applyTip": "Describe specific instances where your frontend work involved rigorous testing, bug identification, or collaboration with QA teams, showcasing your attention to detail and commitment to quality.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Mphasis",
+            "location": "Vadodara, India",
+            "type": "Full-time",
+            "applyUrl": "https://mphasis.com/careers",
+            "employerWebsite": "https://mphasis.com",
+            "skills": [
+              "DevOps Practices",
+              "CI/CD",
+              "Automation",
+              "Cloud Technologies",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "This is a less direct match, but a frontend developer interacts with deployment pipelines and build processes. This foundational exposure, combined with a problem-solving mindset, can be a stepping stone into DevOps.",
+            "applyTip": "Emphasize any experience with build tools, deployment scripts, or cloud platforms within your development workflow. Express a strong interest in infrastructure, automation, and continuous delivery.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "Product Manager",
+            "company": "Zomato",
+            "location": "Mumbai, India",
+            "type": "Full-time",
+            "applyUrl": "https://zomato.com/careers",
+            "employerWebsite": "https://zomato.com",
+            "skills": [
+              "Product Strategy",
+              "Market Analysis",
+              "Stakeholder Management",
+              "Agile Methodologies",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "This is a significant career pivot. However, a developer's understanding of product feasibility, technical constraints, and user experience implementation can be valuable to a product team.",
+            "applyTip": "Highlight any instances where you contributed to feature planning, user story refinement, or understood business impact in your previous developer roles, demonstrating a product-oriented mindset.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Larsen & Toubro Infotech",
+            "location": "Mumbai, India",
+            "type": "Full-time",
+            "applyUrl": "https://larsentoubroinfotech.com/careers",
+            "employerWebsite": "https://larsentoubroinfotech.com",
+            "skills": [
+              "DevOps Practices",
+              "CI/CD",
+              "Automation",
+              "Infrastructure as Code",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "Similar to the Mphasis DevOps role, the candidate's experience in building applications provides a practical perspective on the software development lifecycle, which is crucial for understanding DevOps needs.",
+            "applyTip": "Discuss any initiatives you took to streamline development workflows, improve build times, or manage dependencies, showing an inclination towards operational efficiency.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Swiggy",
+            "location": "Ahmedabad, India",
+            "type": "Full-time",
+            "applyUrl": "https://swiggy.com/careers",
+            "employerWebsite": "https://swiggy.com",
+            "skills": [
+              "DevOps Practices",
+              "CI/CD",
+              "Cloud Technologies",
+              "Monitoring",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "The candidate's development background gives them an inherent understanding of deployment needs and system dependencies. Their problem-solving abilities cultivated as a developer are transferable.",
+            "applyTip": "Highlight any self-learning or personal projects related to server management, containerization (Docker), or cloud services (AWS/Azure/GCP) to demonstrate initiative in learning DevOps concepts.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Hexaware",
+            "location": "Indore, India",
+            "type": "Hybrid",
+            "applyUrl": "https://hexaware.com/careers",
+            "employerWebsite": "https://hexaware.com",
+            "skills": [
+              "DevOps Practices",
+              "CI/CD",
+              "Automation",
+              "System Administration",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "As a developer, the candidate has hands-on experience with the output of DevOps processes. This understanding provides a practical perspective, and their technical skills are foundational for learning DevOps tools.",
+            "applyTip": "Express a clear passion for improving development efficiency and reliability. Mention any experience with scripting or automating repetitive tasks, even if small-scale.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          },
+          {
+            "title": "QA Engineer",
+            "company": "Zoho",
+            "location": "Vadodara, India",
+            "type": "Full-time",
+            "applyUrl": "https://zoho.com/careers",
+            "employerWebsite": "https://zoho.com",
+            "skills": [
+              "Quality Assurance",
+              "Testing Methodologies",
+              "Attention to Detail",
+              "Cutting-edge Technologies",
+              "Scalable Solutions"
+            ],
+            "whyMatch": "With experience as a Frontend Developer, the candidate has a keen eye for detail and understands how software should function. This, combined with SQL for data validation, makes them a suitable candidate for QA.",
+            "applyTip": "Showcase your meticulous approach to coding, your ability to identify and reproduce bugs, and any contributions to ensuring the quality and stability of applications you've worked on.",
+            "matchScore": 40,
+            "distanceCategory": "Nearby"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_9fbca4874a313b3fdcfbda33d39bfd3b609079bc0f3849a0fceb1c3936ffaff6",
+      "uid": "mock_uid_jobmatch_9fbca4874a313b3fdcfbda33d39bfd3b609079bc0f3849a0fceb1c3936ffaff6"
+    },
+    {
+      "result": {
+        "summary": "The candidate is a Frontend Developer with a core specialization in React. This profile is highly sought after across the tech industry, making them a strong fit for roles focused on building modern, interactive web user interfaces for a variety of product and service-oriented companies.",
+        "jobs": [
+          {
+            "title": "React Developer / React Engineer",
+            "company": "Product companies, Tech startups, Digital agencies",
+            "matchScore": 51,
+            "location": "Remote / Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "JavaScript (ES6+)",
+              "HTML5",
+              "CSS3",
+              "State Management (Redux/Context API)",
+              "RESTful APIs",
+              "Git",
+              "Webpack/Vite",
+              "Jest/React Testing Library"
+            ],
+            "whyMatch": "This role is a direct match for the candidate's core React skill and frontend development experience, placing them in high demand for building complex single-page applications.",
+            "applyTip": "Showcase complex React projects, custom hooks, or contributions to open-source React components in your portfolio to demonstrate deep expertise.",
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "UI Developer (React Focused)",
+            "company": "Digital agencies, E-commerce platforms, Design-heavy product companies",
+            "matchScore": 46,
+            "location": "Remote / Hybrid",
+            "type": "Full-time / Contract",
+            "skills": [
+              "React",
+              "HTML",
+              "CSS (Styled Components/CSS-in-JS)",
+              "JavaScript",
+              "UX/UI Principles",
+              "Accessibility",
+              "Component Libraries (Material-UI, Ant Design)",
+              "Figma/Sketch-to-code"
+            ],
+            "whyMatch": "This role leverages React to build visually appealing and highly interactive user interfaces, often working closely with design teams to bring mockups to life.",
+            "applyTip": "Create a strong portfolio demonstrating pixel-perfect implementations, attention to design details, and strong user experience considerations in React.",
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Full-stack Developer (Frontend-heavy)",
+            "company": "Startups, Small to Medium-sized Enterprises (SMEs)",
+            "matchScore": 46,
+            "location": "Remote / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "JavaScript",
+              "HTML",
+              "CSS",
+              "Node.js (Express/NestJS - basic)",
+              "Database (MongoDB/PostgreSQL - basic)",
+              "RESTful APIs",
+              "Git",
+              "Basic Cloud Services (AWS/GCP/Azure)"
+            ],
+            "whyMatch": "Many startups seek developers who can primarily handle frontend with React but have some exposure or willingness to contribute to the backend, offering versatility.",
+            "applyTip": "Showcase any personal projects that involve a basic backend (e.g., a simple Node.js API) to demonstrate full-stack curiosity and capability, even if frontend is the strength.",
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Frontend Engineer",
+            "company": "SaaS companies, Large enterprises, Tech unicorns",
+            "matchScore": 45,
+            "location": "Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "React",
+              "JavaScript",
+              "HTML",
+              "CSS (Sass/Less)",
+              "Responsive Design",
+              "Performance Optimization",
+              "Accessibility",
+              "Build Tools (Webpack, Vite)",
+              "Version Control (Git)",
+              "API Integration"
+            ],
+            "whyMatch": "While broader, React is a foundational skill for modern Frontend Engineers. This role emphasizes engineering best practices, scalability, and robust architecture.",
+            "applyTip": "Highlight experience with performance tuning, accessibility standards, and how your React solutions contribute to scalable, maintainable codebases.",
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Freelance React Developer / Frontend Consultant",
+            "company": "Consulting firms, Various clients (startups to enterprises) via freelance platforms",
+            "matchScore": 45,
+            "location": "Remote",
+            "type": "Freelance / Contract",
+            "skills": [
+              "React",
+              "JavaScript",
+              "HTML",
+              "CSS",
+              "Client Communication",
+              "Project Management basics",
+              "Problem Solving",
+              "Agile Methodologies",
+              "API Integration",
+              "State Management"
+            ],
+            "whyMatch": "React expertise is highly valuable for project-based engagements, allowing the candidate to work on diverse projects and provide specialized frontend solutions.",
+            "applyTip": "Build a robust personal website and presence on freelance platforms (Upwork, Toptal, etc.) with glowing testimonials and a clear demonstration of past project successes with React.",
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_4e432683cedc47e23272f9fd6e985ec63f3bce95e4b11f5c7ce6f08da8083817",
+      "uid": "mock_uid_jobmatch_4e432683cedc47e23272f9fd6e985ec63f3bce95e4b11f5c7ce6f08da8083817"
+    },
+    {
+      "result": {
+        "summary": "This candidate possesses strong SQL skills coupled with backend development experience. This profile is highly versatile for roles that require robust database interaction, data manipulation, and building scalable server-side applications or data pipelines.",
+        "jobs": [
+          {
+            "title": "Backend Engineer (Database-Focused)",
+            "company": "Product companies, Tech startups",
+            "matchScore": 50,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Python/Java/Node.js",
+              "API Development",
+              "Database Design",
+              "ORM"
+            ],
+            "whyMatch": "This role directly leverages your backend experience while emphasizing the critical SQL skills needed for robust database interaction, schema design, and query optimization within server-side applications.",
+            "applyTip": "Highlight specific projects where your SQL expertise led to significant performance improvements or complex data handling in a backend system.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Python/java/node.js",
+              "Api Development",
+              "Database Design",
+              "Orm"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Data Engineer",
+            "company": "Tech companies, Data-driven enterprises, Consulting firms",
+            "matchScore": 50,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Python",
+              "ETL Tools",
+              "Cloud Platforms (AWS/GCP/Azure)",
+              "Data Warehousing"
+            ],
+            "whyMatch": "Your backend experience often involves handling data flow and processing, making data engineering a natural fit. Strong SQL is fundamental for building and managing data pipelines, ETL processes, and data warehouses.",
+            "applyTip": "Showcase any experience with data ingestion, transformation, or pipeline construction, even if it was part of a backend project.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Python",
+              "Etl Tools",
+              "Cloud Platforms (aws/gcp/azure)",
+              "Data Warehousing"
+            ],
+            "learningResources": [
+              {
+                "skill": "Python",
+                "resources": {
+                  "text": [
+                    {
+                      "title": "Python Official Tutorial",
+                      "url": "https://docs.python.org/3/tutorial/"
+                    }
+                  ],
+                  "youtube": [
+                    {
+                      "title": "Python for Beginners",
+                      "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                      "duration": "1 hr"
+                    }
+                  ],
+                  "reason_template": "Required for {target_role} — Python is dominant in AI, Data Science, and backend scripting.",
+                  "reason": "Required for Data Engineer — Python is dominant in AI, Data Science, and backend scripting."
+                }
+              }
+            ],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Database Developer / SQL Developer",
+            "company": "Enterprises, Financial services, Healthcare, IT consulting",
+            "matchScore": 50,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "Advanced SQL",
+              "Stored Procedures",
+              "Performance Tuning",
+              "Database Administration (basic)",
+              "Data Modeling"
+            ],
+            "whyMatch": "This role centers purely on your core SQL proficiency. Your backend experience provides valuable context on how applications interact with databases, allowing you to design and optimize them effectively for application needs.",
+            "applyTip": "Emphasize specific SQL achievements like complex query optimization, indexing strategies, or efficient schema design in your portfolio or resume.",
+            "matchedSkills": [
+              "Advanced Sql"
+            ],
+            "missingSkills": [
+              "Stored Procedures",
+              "Performance Tuning",
+              "Database Administration (basic)",
+              "Data Modeling"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Software Engineer, Data Platform",
+            "company": "Large Tech companies, Data-intensive product companies",
+            "matchScore": 50,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Distributed Systems",
+              "Cloud Technologies",
+              "Backend Language (e.g., Scala, Go, Java)",
+              "API Development"
+            ],
+            "whyMatch": "This role combines backend engineering with a focus on building scalable and resilient data infrastructure. Your SQL skills are crucial for designing and interacting with the underlying data stores in a distributed environment.",
+            "applyTip": "Discuss any experience with building services that handle high volumes of data or contribute to data-centric APIs within a backend context.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Distributed Systems",
+              "Cloud Technologies",
+              "Backend Language (e.g., Scala, Go, Java)",
+              "Api Development"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Analytics Engineer",
+            "company": "Product companies, SaaS companies, E-commerce",
+            "matchScore": 50,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Modeling (dbt)",
+              "Data Warehousing",
+              "BI Tools (e.g., Tableau, Power BI)",
+              "Python (scripting)"
+            ],
+            "whyMatch": "Bridging data engineering and analytics, this role heavily relies on strong SQL skills to transform raw data into a clean, queryable format for business intelligence. Your backend understanding provides a solid foundation for data sources.",
+            "applyTip": "Learn and build a project using dbt (Data Build Tool) to showcase your data transformation and modeling abilities with SQL.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Data Modeling (dbt)",
+              "Data Warehousing",
+              "Bi Tools (e.g., Tableau, Power Bi)",
+              "Python (scripting)"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_11ba9f8b9f0e604e603005e04bf1647f0a3ad166a86f8f8c6364af3bcbf532ab",
+      "uid": "mock_uid_jobmatch_11ba9f8b9f0e604e603005e04bf1647f0a3ad166a86f8f8c6364af3bcbf532ab"
+    },
+    {
+      "result": {
+        "summary": "This candidate possesses foundational SQL skills coupled with practical backend experience. This profile positions them strongly for roles that require robust data interaction, system development, and database management. They are well-suited for positions where backend logic integrates closely with data storage and retrieval systems.",
+        "jobs": [
+          {
+            "title": "Backend Developer",
+            "company": "Product companies, Tech startups, Enterprises",
+            "matchScore": 50,
+            "location": "Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Python/Java/Node.js",
+              "REST APIs",
+              "Database Design",
+              "System Architecture"
+            ],
+            "whyMatch": "SQL is a critical skill for interacting with relational databases, which is a core responsibility for Backend Developers. The candidate's existing backend experience directly aligns with developing server-side logic, API endpoints, and integrating with data storage.",
+            "applyTip": "Highlight specific projects where you designed a database schema and integrated it with backend services using SQL, detailing performance considerations.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Python/java/node.js",
+              "Rest Apis",
+              "Database Design",
+              "System Architecture"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Data Engineer",
+            "company": "Data-driven companies, Financial institutions, Large tech companies",
+            "matchScore": 50,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "ETL",
+              "Python/Scala",
+              "Data Warehousing",
+              "Cloud Platforms (AWS/GCP/Azure)"
+            ],
+            "whyMatch": "SQL is fundamental for data extraction, transformation, and loading (ETL) processes, and backend experience provides a strong foundation for building robust data pipelines, scripting, and system integration within data engineering workflows.",
+            "applyTip": "Showcase any experience with data pipeline construction or scripting (even if personal projects) where SQL was used for data manipulation and preparation.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Etl",
+              "Python/scala",
+              "Data Warehousing",
+              "Cloud Platforms (aws/gcp/azure)"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Database Developer / Engineer",
+            "company": "Software vendors, Consulting firms, Enterprises with complex data needs",
+            "matchScore": 50,
+            "location": "On-site / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL (Advanced)",
+              "Database Administration",
+              "Performance Tuning",
+              "Schema Design",
+              "Stored Procedures"
+            ],
+            "whyMatch": "This role is a direct fit for deep SQL expertise. Backend experience is invaluable for understanding how applications interact with databases, enabling the candidate to design and optimize databases for specific application requirements and performance.",
+            "applyTip": "Emphasize your understanding of database performance optimization, indexing, and transactional integrity, linking it to the needs of backend applications.",
+            "matchedSkills": [
+              "Sql (advanced)"
+            ],
+            "missingSkills": [
+              "Database Administration",
+              "Performance Tuning",
+              "Schema Design",
+              "Stored Procedures"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Analytics Engineer",
+            "company": "SaaS companies, E-commerce, Data Analytics startups",
+            "matchScore": 50,
+            "location": "Remote / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Modeling (dbt)",
+              "BI Tools (Tableau/PowerBI)",
+              "Python (scripting)",
+              "Data Warehousing"
+            ],
+            "whyMatch": "Strong SQL skills are critical for building robust data models and transformations used in analytics. Backend experience aids in understanding data architecture, building reliable data pipelines, and potentially automating data processes, bridging the gap between raw data and business insights.",
+            "applyTip": "Learn or highlight experience with a tool like dbt (data build tool) to demonstrate modern data modeling practices using SQL.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Data Modeling (dbt)",
+              "Bi Tools (tableau/powerbi)",
+              "Python (scripting)",
+              "Data Warehousing"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Cloud Data Engineer",
+            "company": "Cloud-native startups, Large enterprises migrating to cloud, Tech consulting",
+            "matchScore": 50,
+            "location": "Remote / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Cloud Data Services (Snowflake, BigQuery, Redshift)",
+              "Python/Java",
+              "Data Lake/Warehouse Concepts",
+              "API Integration"
+            ],
+            "whyMatch": "This role leverages robust SQL skills for managing and querying data within cloud environments. Backend experience provides a solid foundation for understanding cloud architecture, integrating various data services, and building scalable data solutions on platforms like AWS, GCP, or Azure.",
+            "applyTip": "Consider obtaining a foundational cloud certification (e.g., AWS Cloud Practitioner, Azure Fundamentals) to demonstrate interest and basic understanding of cloud environments relevant to data.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Cloud Data Services (snowflake, Bigquery, Redshift)",
+              "Python/java",
+              "Data Lake/warehouse Concepts",
+              "Api Integration"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_aef5dd5533003ebb87166439181547f18326796c60be7df74caf448acd1538ed",
+      "uid": "mock_uid_jobmatch_aef5dd5533003ebb87166439181547f18326796c60be7df74caf448acd1538ed"
+    },
+    {
+      "result": {
+        "summary": "This candidate profile highlights strong foundational skills in SQL and practical experience in backend development. This combination is highly sought after for roles focused on data management, database interaction, and server-side logic. The job market offers excellent opportunities in areas bridging core software development with data engineering and database specialization.",
+        "jobs": [
+          {
+            "title": "SQL Developer / Database Developer",
+            "company": "Financial services, Healthcare, IT consulting, Software vendors",
+            "matchScore": 60,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Stored Procedures",
+              "Query Optimization",
+              "Database Management Systems (e.g., PostgreSQL, MySQL, SQL Server)",
+              "Database Design"
+            ],
+            "whyMatch": "This role directly leverages the primary stated skill, SQL. Backend experience provides valuable context on how applications interact with databases, which is essential for developing efficient queries and robust schemas.",
+            "applyTip": "Detail your experience in writing complex SQL queries, optimizing database performance, designing robust schemas, and maintaining data integrity.",
+            "matchedSkills": [
+              "Sql",
+              "Database Management Systems (e.g., Postgresql, Mysql, Sql Server)"
+            ],
+            "missingSkills": [
+              "Stored Procedures",
+              "Query Optimization",
+              "Database Design"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Backend Developer / Engineer",
+            "company": "Product companies, Tech Startups",
+            "matchScore": 53,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "API Development (REST/GraphQL)",
+              "Programming Language (e.g., Python, Java, Node.js)",
+              "Database Design"
+            ],
+            "whyMatch": "Directly leverages the 'backend' experience. SQL is a fundamental skill for interacting with relational databases, which are central to almost all backend systems for data storage and retrieval.",
+            "applyTip": "Showcase specific projects where you designed and optimized SQL queries, database schemas, or worked with ORMs within a backend application.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Api Development (rest/graphql)",
+              "Programming Language (e.g., Python, Java, Node.js)",
+              "Database Design"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Data Engineer",
+            "company": "Data-driven enterprises, Tech companies, Analytics firms",
+            "matchScore": 50,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "ETL",
+              "Data Warehousing",
+              "Cloud Platforms (AWS/Azure/GCP)",
+              "Data Modeling"
+            ],
+            "whyMatch": "Backend experience often involves building data pipelines or services that produce or consume data. SQL is crucial for data transformation, ingestion, and querying within data warehousing and ETL processes.",
+            "applyTip": "Highlight any experience with building data pipelines (even simple ones) or working with large datasets, emphasizing your understanding of data flow and integrity.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Etl",
+              "Data Warehousing",
+              "Cloud Platforms (aws/azure/gcp)",
+              "Data Modeling"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "ETL Developer",
+            "company": "Large corporations, Data consulting firms, Business Intelligence departments",
+            "matchScore": 50,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "ETL Tools (e.g., SSIS, Airflow, Talend)",
+              "Data Integration",
+              "Data Quality",
+              "Scripting (e.g., Python)"
+            ],
+            "whyMatch": "ETL processes are a core part of data operations, often integrating closely with backend systems to move and transform data. SQL is the cornerstone for extracting, transforming, and loading data, making backend experience highly relevant.",
+            "applyTip": "Emphasize projects where you designed or implemented data extraction, transformation, and loading logic, particularly if you've worked with various data sources.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Etl Tools (e.g., Ssis, Airflow, Talend)",
+              "Data Integration",
+              "Data Quality",
+              "Scripting (e.g., Python)"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Software Engineer (Data Services)",
+            "company": "SaaS companies, Large-scale web applications, E-commerce",
+            "matchScore": 50,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Programming Language (e.g., Java, Go, Python)",
+              "API Design",
+              "Distributed Systems",
+              "Cloud Services"
+            ],
+            "whyMatch": "This role focuses on building backend services specifically designed to manage, process, or expose data, making SQL a core skill for database interaction. The 'backend' experience is a direct and strong match.",
+            "applyTip": "Focus your resume on building robust and scalable data-driven APIs and microservices, demonstrating how you integrate SQL databases effectively within a service-oriented architecture.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Programming Language (e.g., Java, Go, Python)",
+              "Api Design",
+              "Distributed Systems",
+              "Cloud Services"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_c6cea7cf5c1f1e8d356a34e60bb6cec62a9b994ca0def7983f94002ac133465f",
+      "uid": "mock_uid_jobmatch_c6cea7cf5c1f1e8d356a34e60bb6cec62a9b994ca0def7983f94002ac133465f"
+    },
+    {
+      "result": {
+        "summary": "With 2 years of experience primarily focused on SQL, the candidate is well-positioned for entry to mid-level data-centric roles. Their expertise is valuable for organizations needing efficient data extraction, manipulation, analysis, and reporting, making them a strong fit for roles requiring direct interaction with relational databases.",
+        "jobs": [
+          {
+            "title": "Data Analyst",
+            "company": "Product companies, Consulting firms",
+            "matchScore": 53,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Excel",
+              "Data Visualization (e.g., Tableau/Power BI)",
+              "Communication"
+            ],
+            "whyMatch": "This role is a direct fit for SQL proficiency, requiring data extraction, cleaning, and basic analysis to support business decisions. The 2 years of experience provide a solid foundation for interpreting and presenting data insights.",
+            "applyTip": "Create a portfolio of SQL projects showcasing different query types, aggregations, and joins, perhaps with sample datasets, to demonstrate practical application.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Excel",
+              "Data Visualization (e.g., Tableau/power Bi)",
+              "Communication"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Junior Business Intelligence Analyst",
+            "company": "Large enterprises, Tech companies",
+            "matchScore": 53,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Visualization (e.g., Power BI, Tableau)",
+              "Report Design",
+              "ETL Concepts"
+            ],
+            "whyMatch": "Leveraging SQL for building reports and dashboards, this role extends SQL skills into creating actionable business intelligence. The candidate's experience will be valuable in understanding data structures for reporting requirements.",
+            "applyTip": "Learn one popular BI tool (e.g., Power BI or Tableau) and build a few interactive dashboards using public datasets to demonstrate proficiency in data storytelling.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Data Visualization (e.g., Power Bi, Tableau)",
+              "Report Design",
+              "Etl Concepts"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Associate Report Developer",
+            "company": "Healthcare organizations, Government agencies",
+            "matchScore": 53,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Reporting Tools (e.g., SSRS, Crystal Reports)",
+              "Data Extraction",
+              "Requirements Gathering"
+            ],
+            "whyMatch": "Focused on extracting and presenting data through structured reports, this role is an excellent fit for someone with strong SQL querying skills. The candidate can efficiently pull and structure data needed for various regular and ad-hoc business reports.",
+            "applyTip": "Gain exposure to a specific reporting tool (like SSRS or Power BI Report Builder) and understand how to link SQL queries to build parameter-driven reports to showcase practical application.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Reporting Tools (e.g., Ssrs, Crystal Reports)",
+              "Data Extraction",
+              "Requirements Gathering"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "SQL Developer",
+            "company": "Software development firms, Financial institutions",
+            "matchScore": 50,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL (T-SQL/PL/SQL)",
+              "Stored Procedures",
+              "Functions",
+              "Database Design Basics",
+              "Performance Tuning"
+            ],
+            "whyMatch": "This role delves deeper into the technical aspects of SQL, focusing on database programming, optimization, and maintenance. The candidate's 2 years of SQL experience provides a strong base for developing and managing robust database solutions.",
+            "applyTip": "Practice writing complex stored procedures, functions, and triggers. Familiarize yourself with basic database administration tasks and performance tuning concepts to highlight technical depth.",
+            "matchedSkills": [
+              "Sql (t-sql/pl/sql)"
+            ],
+            "missingSkills": [
+              "Stored Procedures",
+              "Functions",
+              "Database Design Basics",
+              "Performance Tuning"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Data Operations Analyst",
+            "company": "SaaS companies, E-commerce",
+            "matchScore": 50,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Troubleshooting",
+              "Data Quality",
+              "Ticketing Systems",
+              "Problem-Solving"
+            ],
+            "whyMatch": "This role utilizes SQL heavily for monitoring data pipelines, investigating data discrepancies, and ensuring data integrity. The candidate's SQL proficiency is crucial for quick data retrieval and analysis to resolve operational issues and maintain data health.",
+            "applyTip": "Highlight any experience with data quality checks or problem-solving using SQL in your past roles. Emphasize your analytical and troubleshooting mindset on your resume.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Troubleshooting",
+              "Data Quality",
+              "Ticketing Systems",
+              "Problem-solving"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_3077fa12b92808eaee02cef57b487c6ad3d721153be1959c49d3b6cf23766983",
+      "uid": "mock_uid_jobmatch_3077fa12b92808eaee02cef57b487c6ad3d721153be1959c49d3b6cf23766983"
+    },
+    {
+      "result": {
+        "summary": "The candidate possesses 2 years of dedicated experience with SQL, positioning them well for entry-to-mid-level roles focused on data extraction, manipulation, and reporting. Their profile is ideal for roles requiring strong data querying capabilities across various industries, from technology to finance, where clean and accessible data is crucial for decision-making.",
+        "jobs": [
+          {
+            "title": "Data Analyst",
+            "company": "Tech Startups, E-commerce, Consulting Firms",
+            "matchScore": 57,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Excel",
+              "Data Visualization (e.g., Tableau/Power BI)"
+            ],
+            "whyMatch": "This role directly leverages strong SQL skills for data extraction, analysis, and generating actionable insights, which is a common and essential progression for 2 years of SQL experience in almost any industry.",
+            "applyTip": "Highlight practical projects where you transformed raw data into business recommendations or solved a specific business problem using SQL.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Excel",
+              "Data Visualization (e.g., Tableau/power Bi)"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Business Intelligence Analyst",
+            "company": "SaaS Companies, Financial Services, Large Enterprises",
+            "matchScore": 57,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Power BI/Tableau",
+              "Data Warehousing Concepts"
+            ],
+            "whyMatch": "Builds on SQL proficiency to design and develop reports, dashboards, and support data-driven decision-making, often involving understanding and working with data warehousing structures.",
+            "applyTip": "Demonstrate experience creating interactive dashboards or reports that tracked KPIs and provided measurable value to stakeholders.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Power Bi/tableau",
+              "Data Warehousing Concepts"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Junior SQL Developer",
+            "company": "IT Services, Software Development, Government",
+            "matchScore": 57,
+            "location": "Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL (T-SQL/PL/SQL)",
+              "Stored Procedures",
+              "Database Optimization Basics"
+            ],
+            "whyMatch": "Focuses directly on writing efficient SQL queries, developing stored procedures, and performing basic database management tasks, ideal for someone passionate about the database layer and data manipulation.",
+            "applyTip": "Showcase your ability to write complex, optimized queries and explain how you've improved query performance or data integrity in previous roles.",
+            "matchedSkills": [
+              "Sql (t-sql/pl/sql)"
+            ],
+            "missingSkills": [
+              "Stored Procedures",
+              "Database Optimization Basics"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Reporting Analyst",
+            "company": "Healthcare, Retail, Logistics, Operations",
+            "matchScore": 57,
+            "location": "Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Automated Reporting Tools (e.g., SSRS)"
+            ],
+            "whyMatch": "This role is centered on extracting, transforming, and presenting data through reports, a core function for professionals with solid SQL experience, ensuring stakeholders receive timely and accurate information.",
+            "applyTip": "Provide examples of how your reports have directly influenced operational improvements or strategic decisions, emphasizing automation where possible.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Microsoft Excel",
+              "Automated Reporting Tools (e.g., Ssrs)"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Data Quality Analyst",
+            "company": "Finance, Government, Data-heavy Product Companies",
+            "matchScore": 53,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Data Profiling",
+              "Attention to Detail",
+              "Problem-solving"
+            ],
+            "whyMatch": "Utilizes SQL extensively to identify, monitor, and resolve data quality issues, ensuring data integrity for analysis and operations, which is crucial for any data-driven organization, especially with 2 years of experience in data handling.",
+            "applyTip": "Describe specific instances where you identified data discrepancies using SQL, the impact of those issues, and the steps you took to resolve them.",
+            "matchedSkills": [
+              "Sql"
+            ],
+            "missingSkills": [
+              "Data Profiling",
+              "Attention To Detail",
+              "Problem-solving"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_15e13b8fe8667ee93e39e1d6bdbfbb54a53cc01c916188a828c61b7b687cc7b6",
+      "uid": "mock_uid_jobmatch_15e13b8fe8667ee93e39e1d6bdbfbb54a53cc01c916188a828c61b7b687cc7b6"
+    },
+    {
+      "result": {
+        "summary": "This candidate, with 2 years of experience and strong proficiency in SQL and Microsoft Excel, possesses a solid foundation in data manipulation, analysis, and reporting. Their profile is well-suited for entry to mid-level data-centric roles that require extracting insights, creating reports, and supporting business operations through data.",
+        "jobs": [
+          {
+            "title": "Data Analyst",
+            "company": "Tech startups, Mid-size to large enterprises (across all industries like Finance, Healthcare, Retail)",
+            "matchScore": 60,
+            "location": "Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Data Cleaning",
+              "Basic Data Visualization (e.g., Power BI/Tableau)",
+              "Critical Thinking"
+            ],
+            "whyMatch": "This role directly leverages SQL for querying, extracting, and manipulating data from databases, and Microsoft Excel for detailed analysis, reporting, and creating actionable insights, which are central to the candidate's existing skillset.",
+            "applyTip": "Build a small portfolio demonstrating data cleaning, analysis, and visualization projects using both SQL queries and Excel functions to solve a practical business problem.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Data Cleaning",
+              "Basic Data Visualization (e.g., Power Bi/tableau)",
+              "Critical Thinking"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Business Analyst",
+            "company": "Consulting firms, SaaS companies, Enterprise corporations, Financial services",
+            "matchScore": 57,
+            "location": "Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Requirements Gathering",
+              "Process Mapping",
+              "Stakeholder Communication",
+              "Data Modeling (basic)"
+            ],
+            "whyMatch": "Candidates with strong SQL and Excel skills can effectively analyze business processes, interpret data for strategic decision-making, and translate technical data into actionable business insights, acting as a crucial bridge between business and technical teams.",
+            "applyTip": "Highlight experiences where you translated complex business needs into data requirements or simplified data-driven findings for non-technical stakeholders.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Requirements Gathering",
+              "Process Mapping",
+              "Stakeholder Communication",
+              "Data Modeling (basic)"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Reporting Analyst",
+            "company": "E-commerce companies, Financial institutions, Large organizations with extensive operational data",
+            "matchScore": 57,
+            "location": "On-site / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Report Automation",
+              "Data Validation",
+              "Dashboard Creation (basic)",
+              "Attention to Detail"
+            ],
+            "whyMatch": "The core function of a Reporting Analyst is to generate accurate and timely reports. This role heavily relies on SQL for efficient data extraction and Excel for meticulous formatting, presentation, and often automation of recurring reports.",
+            "applyTip": "Showcase examples of efficient and clear reports you've created, specifically detailing how SQL was used for data sourcing and Excel for structuring and presenting the insights.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Report Automation",
+              "Data Validation",
+              "Dashboard Creation (basic)",
+              "Attention To Detail"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Junior Business Intelligence (BI) Analyst",
+            "company": "Tech startups, Data-driven marketing agencies, Companies investing in data platforms",
+            "matchScore": 57,
+            "location": "Remote / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Data Warehousing Concepts (basic)",
+              "Data Modeling (basic)",
+              "Power BI / Tableau (exposure)",
+              "ETL understanding"
+            ],
+            "whyMatch": "This role leverages the candidate's SQL skills for data extraction and transformation, and Excel for initial data exploration or smaller-scale reporting, serving as an excellent entry point into broader BI tools and strategies for building dashboards.",
+            "applyTip": "Complete an online course or build a small project using a popular BI tool like Power BI Desktop or Tableau Public to demonstrate initiative and foundational understanding beyond Excel.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Data Warehousing Concepts (basic)",
+              "Data Modeling (basic)",
+              "Power Bi / Tableau (exposure)",
+              "Etl Understanding"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Operations Analyst",
+            "company": "Logistics & Supply Chain, Manufacturing, Retail operations, Service industries",
+            "matchScore": 57,
+            "location": "On-site / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Process Optimization",
+              "Problem Solving",
+              "Basic Statistical Analysis",
+              "Root Cause Analysis"
+            ],
+            "whyMatch": "Many operational roles require analyzing performance metrics, identifying inefficiencies, and proposing improvements. SQL is crucial for extracting operational data, while Excel is used for modeling scenarios, forecasting, and presenting improvement plans to optimize workflows.",
+            "applyTip": "Provide specific examples in your resume where you used data analysis (from SQL and Excel) to identify bottlenecks, improve efficiency, or reduce costs in an operational context.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Process Optimization",
+              "Problem Solving",
+              "Basic Statistical Analysis",
+              "Root Cause Analysis"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_8c4fa55af553a06f46a71cb9b900a337aac93653d00848af22206efed03e99eb",
+      "uid": "mock_uid_jobmatch_8c4fa55af553a06f46a71cb9b900a337aac93653d00848af22206efed03e99eb"
+    },
+    {
+      "result": {
+        "summary": "This candidate possesses a strong foundation in data manipulation and analysis, with 2 years of experience leveraging SQL for database querying and Microsoft Excel for detailed reporting and modeling. Their profile is exceptionally well-suited for roles focused on extracting, cleaning, analyzing, and presenting data to support business intelligence and operational decision-making across various industries.",
+        "jobs": [
+          {
+            "title": "Data Analyst",
+            "company": "Tech startups, E-commerce, Financial Services, Consulting firms",
+            "matchScore": 57,
+            "location": "Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Data Cleaning",
+              "Data Visualization",
+              "Report Generation",
+              "Critical Thinking"
+            ],
+            "whyMatch": "This role directly aligns with the candidate's core skills in querying databases with SQL and performing in-depth analysis and reporting using Excel, making them ideal for interpreting data and translating it into actionable insights.",
+            "applyTip": "Highlight specific projects where you used SQL to extract complex datasets and Excel to build insightful dashboards or conduct root cause analysis.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Data Cleaning",
+              "Data Visualization",
+              "Report Generation",
+              "Critical Thinking"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Business Intelligence (BI) Analyst",
+            "company": "Large Enterprises, Retail, Healthcare, SaaS companies",
+            "matchScore": 57,
+            "location": "Hybrid / Remote",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Data Warehousing Concepts",
+              "Dashboarding (e.g., Power BI/Tableau exposure is a plus)",
+              "Report Automation",
+              "ETL basics"
+            ],
+            "whyMatch": "BI Analyst roles heavily rely on SQL for data extraction from data warehouses and often use Excel for initial data exploration or specific reporting. The 2 years of experience are perfect for contributing to existing BI solutions and reporting frameworks.",
+            "applyTip": "If you have any exposure to BI tools (even self-taught), mention it. Otherwise, emphasize your ability to structure data for clear reporting and identify business trends from raw data.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Data Warehousing Concepts",
+              "Dashboarding (e.g., Power Bi/tableau Exposure Is A Plus)",
+              "Report Automation",
+              "Etl Basics"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Reporting Analyst",
+            "company": "Banks, Insurance, Marketing Agencies, Government, Manufacturing",
+            "matchScore": 57,
+            "location": "On-site / Hybrid",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Data Validation",
+              "Automated Reporting",
+              "Stakeholder Communication",
+              "Data Accuracy"
+            ],
+            "whyMatch": "This role is a direct application of the candidate's skills, focusing on generating accurate and timely reports using SQL queries and presenting them clearly via Excel. Their experience makes them efficient at managing recurring reporting tasks and ensuring data integrity.",
+            "applyTip": "Showcase examples of reports you've created, detailing how you ensured data accuracy, streamlined the reporting process, and how they were used to inform decisions.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Data Validation",
+              "Automated Reporting",
+              "Stakeholder Communication",
+              "Data Accuracy"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Operations Analyst",
+            "company": "Logistics, Manufacturing, E-commerce, Supply Chain, Tech Operations",
+            "matchScore": 57,
+            "location": "Hybrid / On-site",
+            "type": "Full-time",
+            "skills": [
+              "SQL",
+              "Microsoft Excel",
+              "Process Analysis",
+              "Data-driven Problem Solving",
+              "Key Performance Indicator (KPI) Tracking",
+              "Root Cause Analysis"
+            ],
+            "whyMatch": "Operations roles require analyzing operational data to identify inefficiencies and improve processes. SQL and Excel are essential for extracting performance metrics and modeling solutions, making the candidate a strong fit for optimizing workflows and driving efficiency.",
+            "applyTip": "Frame your experience around identifying bottlenecks or areas for improvement using data, even if not explicitly 'operations' focused, highlighting quantifiable impact.",
+            "matchedSkills": [
+              "Sql",
+              "Microsoft Excel"
+            ],
+            "missingSkills": [
+              "Process Analysis",
+              "Data-driven Problem Solving",
+              "Key Performance Indicator (kpi) Tracking",
+              "Root Cause Analysis"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Junior Financial Analyst",
+            "company": "Investment Banks, Corporate Finance, Fintech, Consulting, Wealth Management",
+            "matchScore": 57,
+            "location": "On-site",
+            "type": "Full-time",
+            "skills": [
+              "Microsoft Excel (Advanced)",
+              "SQL (for data extraction)",
+              "Financial Modeling (basic to intermediate)",
+              "Data Interpretation",
+              "Attention to Detail",
+              "Basic Accounting Principles"
+            ],
+            "whyMatch": "Many financial roles require strong Excel for modeling, budgeting, and forecasting, complemented by SQL for extracting relevant financial data from various systems. The 2 years of experience would allow them to support senior analysts in data-heavy financial tasks.",
+            "applyTip": "If you have any exposure to financial concepts, quantitative coursework, or experience building complex models in Excel, highlight these prominently. Emphasize analytical rigor.",
+            "matchedSkills": [
+              "Microsoft Excel (advanced)",
+              "Sql (for Data Extraction)"
+            ],
+            "missingSkills": [
+              "Financial Modeling (basic To Intermediate)",
+              "Data Interpretation",
+              "Attention To Detail",
+              "Basic Accounting Principles"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_bc9574f2d36f470a20163a67cc4c7fe5570e764aef1f40cdf49a56f60765f7c9",
+      "uid": "mock_uid_jobmatch_bc9574f2d36f470a20163a67cc4c7fe5570e764aef1f40cdf49a56f60765f7c9"
+    },
+    {
+      "result": {
+        "summary": "Yashvi Tanna is an enthusiastic and high-achieving first-year Computer Science and Engineering student with a strong academic foundation and a clear passion for AI/ML, Robotics, and Embedded Systems. Demonstrating significant potential through ambitious academic projects and hackathon success, they are well-suited for entry-level internships focused on applied technology and software development. Their profile highlights a proactive approach to learning and practical problem-solving, making them a promising candidate for roles that value innovation and rapid skill acquisition.",
+        "jobs": [
+          {
+            "title": "AI/ML Research Intern",
+            "company": "Tech startups, university research labs, AI product companies",
+            "matchScore": 40,
+            "location": "Hybrid",
+            "type": "Internship",
+            "skills": [
+              "Python",
+              "AI/ML concepts",
+              "Data Analytics",
+              "Visualization Tools",
+              "Problem Solving"
+            ],
+            "whyMatch": "The candidate's summary explicitly states strong interest in AI/ML, backed by projects like 'AI-Powered Smart Attendance' and 'Student Behaviour Analysis' which involve AI-driven insights and data visualization. Their participation in numerous hackathons further demonstrates a proactive engagement with AI/ML challenges.",
+            "applyTip": "Highlight specific AI algorithms or machine learning models explored or implemented in your projects, even if theoretical, and discuss how they could be applied to real-world problems.",
+            "matchedSkills": [],
+            "missingSkills": [
+              "Python",
+              "Ai/ml Concepts",
+              "Data Analytics",
+              "Visualization Tools",
+              "Problem Solving"
+            ],
+            "learningResources": [
+              {
+                "skill": "Python",
+                "resources": {
+                  "text": [
+                    {
+                      "title": "Python Official Tutorial",
+                      "url": "https://docs.python.org/3/tutorial/"
+                    }
+                  ],
+                  "youtube": [
+                    {
+                      "title": "Python for Beginners",
+                      "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                      "duration": "1 hr"
+                    }
+                  ],
+                  "reason_template": "Required for {target_role} — Python is dominant in AI, Data Science, and backend scripting.",
+                  "reason": "Required for AI/ML Research Intern — Python is dominant in AI, Data Science, and backend scripting."
+                }
+              }
+            ],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Robotics Software Engineering Intern",
+            "company": "Robotics firms, automation companies, R&D departments",
+            "matchScore": 40,
+            "location": "On-site",
+            "type": "Internship",
+            "skills": [
+              "C++",
+              "Python",
+              "Robotics",
+              "Computer Vision",
+              "Embedded Systems (ESP32/Jetson)"
+            ],
+            "whyMatch": "The 'SarvaNetra – Smart Security Surveillance Robot' project directly showcases hands-on experience in building autonomous robots, integrating computer vision for object detection, and utilizing embedded systems like ESP32/Jetson, aligning perfectly with robotics roles.",
+            "applyTip": "Detail the specific software architecture and control mechanisms developed for the 'SarvaNetra' robot, emphasizing challenges faced and solutions implemented in real-time operation.",
+            "matchedSkills": [],
+            "missingSkills": [
+              "C++",
+              "Python",
+              "Robotics",
+              "Computer Vision",
+              "Embedded Systems (esp32/jetson)"
+            ],
+            "learningResources": [
+              {
+                "skill": "Python",
+                "resources": {
+                  "text": [
+                    {
+                      "title": "Python Official Tutorial",
+                      "url": "https://docs.python.org/3/tutorial/"
+                    }
+                  ],
+                  "youtube": [
+                    {
+                      "title": "Python for Beginners",
+                      "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                      "duration": "1 hr"
+                    }
+                  ],
+                  "reason_template": "Required for {target_role} — Python is dominant in AI, Data Science, and backend scripting.",
+                  "reason": "Required for Robotics Software Engineering Intern — Python is dominant in AI, Data Science, and backend scripting."
+                }
+              }
+            ],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Embedded Systems / IoT Intern",
+            "company": "IoT device manufacturers, smart home technology companies, industrial automation",
+            "matchScore": 40,
+            "location": "Hybrid",
+            "type": "Internship",
+            "skills": [
+              "Embedded C",
+              "C++",
+              "ESP32",
+              "Sensors",
+              "IoT",
+              "Real-time systems"
+            ],
+            "whyMatch": "The 'Fingerprint Attendance System' project demonstrates practical experience with microcontrollers (ESP32), sensor integration (R307 fingerprint sensor), and embedded programming in C for real-time IoT applications.",
+            "applyTip": "Explain the embedded system architecture, including specific hardware components, communication protocols, and how data from the sensor was processed and logged.",
+            "matchedSkills": [],
+            "missingSkills": [
+              "Embedded C",
+              "C++",
+              "Esp32",
+              "Sensors",
+              "Iot",
+              "Real-time Systems"
+            ],
+            "learningResources": [],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Junior Data Analyst / Data Visualization Intern",
+            "company": "Tech startups, consultancies, any data-driven organization",
+            "matchScore": 40,
+            "location": "Remote",
+            "type": "Internship",
+            "skills": [
+              "Python",
+              "Data Analytics",
+              "Visualization Tools",
+              "Dashboarding",
+              "Team Work"
+            ],
+            "whyMatch": "Projects such as 'AI-Powered Smart Attendance & Learning Platform' and 'Student Behaviour Analysis System' involved developing dashboards, monitoring trends, and providing data-driven recommendations, showcasing strong analytical and visualization capabilities.",
+            "applyTip": "Focus on the insights derived from your data projects, how they were visualized, and the potential impact or recommendations generated based on your analysis.",
+            "matchedSkills": [],
+            "missingSkills": [
+              "Python",
+              "Data Analytics",
+              "Visualization Tools",
+              "Dashboarding",
+              "Team Work"
+            ],
+            "learningResources": [
+              {
+                "skill": "Python",
+                "resources": {
+                  "text": [
+                    {
+                      "title": "Python Official Tutorial",
+                      "url": "https://docs.python.org/3/tutorial/"
+                    }
+                  ],
+                  "youtube": [
+                    {
+                      "title": "Python for Beginners",
+                      "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                      "duration": "1 hr"
+                    }
+                  ],
+                  "reason_template": "Required for {target_role} — Python is dominant in AI, Data Science, and backend scripting.",
+                  "reason": "Required for Junior Data Analyst / Data Visualization Intern — Python is dominant in AI, Data Science, and backend scripting."
+                }
+              }
+            ],
+            "distanceCategory": "Farther Away"
+          },
+          {
+            "title": "Software Development Intern (Generalist)",
+            "company": "General tech companies (startups to mid-sized), software development firms",
+            "matchScore": 40,
+            "location": "Flexible",
+            "type": "Internship",
+            "skills": [
+              "Python",
+              "C",
+              "C++",
+              "Team Work",
+              "Problem Solving",
+              "Creativity"
+            ],
+            "whyMatch": "The candidate possesses a strong foundation in core programming languages (C, C++, Python) and has demonstrated robust software development aptitude through diverse technical projects and active participation in hackathons and competitions, indicating a strong ability to learn and adapt.",
+            "applyTip": "Emphasize your problem-solving skills and adaptability to new technologies, providing examples from your projects or hackathons where you quickly learned and applied new concepts to build functional software.",
+            "matchedSkills": [],
+            "missingSkills": [
+              "Python",
+              "C",
+              "C++",
+              "Team Work",
+              "Problem Solving",
+              "Creativity"
+            ],
+            "learningResources": [
+              {
+                "skill": "Python",
+                "resources": {
+                  "text": [
+                    {
+                      "title": "Python Official Tutorial",
+                      "url": "https://docs.python.org/3/tutorial/"
+                    }
+                  ],
+                  "youtube": [
+                    {
+                      "title": "Python for Beginners",
+                      "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                      "duration": "1 hr"
+                    }
+                  ],
+                  "reason_template": "Required for {target_role} — Python is dominant in AI, Data Science, and backend scripting.",
+                  "reason": "Required for Software Development Intern (Generalist) — Python is dominant in AI, Data Science, and backend scripting."
+                }
+              }
+            ],
+            "distanceCategory": "Farther Away"
+          }
+        ]
+      },
+      "id": "mock_uid_jobmatch_15ca7416eb09fbef0a1ebf3adbd633b9fd81c241741f4523031c85df2b6cf9b2",
+      "uid": "mock_uid_jobmatch_15ca7416eb09fbef0a1ebf3adbd633b9fd81c241741f4523031c85df2b6cf9b2"
+    }
+  ],
+  "savedJobs": [
+    {
+      "title": "Backend Engineer (Database-Focused)",
+      "company": "Product companies, Tech startups",
+      "matchScore": 50,
+      "location": "Hybrid",
+      "type": "Full-time",
+      "skills": [
+        "SQL",
+        "Python/Java/Node.js",
+        "API Development",
+        "Database Design",
+        "ORM"
+      ],
+      "whyMatch": "This role directly leverages your backend experience while emphasizing the critical SQL skills needed for robust database interaction, schema design, and query optimization within server-side applications.",
+      "applyTip": "Highlight specific projects where your SQL expertise led to significant performance improvements or complex data handling in a backend system.",
+      "matchedSkills": [
+        "Sql"
+      ],
+      "missingSkills": [
+        "Python/java/node.js",
+        "Api Development",
+        "Database Design",
+        "Orm"
+      ],
+      "learningResources": [],
+      "distanceCategory": "Farther Away",
+      "id": "0.6652566842055031",
+      "status": "Saved",
+      "savedAt": "2026-08-14T03:14:39.341Z",
+      "userId": "mock_uid",
+      "uid": "0.6652566842055031"
+    },
+    {
+      "title": "SQL Developer / Database Developer",
+      "company": "Financial services, Healthcare, IT consulting, Software vendors",
+      "matchScore": 60,
+      "location": "On-site",
+      "type": "Full-time",
+      "skills": [
+        "SQL",
+        "Stored Procedures",
+        "Query Optimization",
+        "Database Management Systems (e.g., PostgreSQL, MySQL, SQL Server)",
+        "Database Design"
+      ],
+      "whyMatch": "This role directly leverages the primary stated skill, SQL. Backend experience provides valuable context on how applications interact with databases, which is essential for developing efficient queries and robust schemas.",
+      "applyTip": "Detail your experience in writing complex SQL queries, optimizing database performance, designing robust schemas, and maintaining data integrity.",
+      "matchedSkills": [
+        "Sql",
+        "Database Management Systems (e.g., Postgresql, Mysql, Sql Server)"
+      ],
+      "missingSkills": [
+        "Stored Procedures",
+        "Query Optimization",
+        "Database Design"
+      ],
+      "learningResources": [],
+      "distanceCategory": "Farther Away",
+      "id": "0.6033276085089372",
+      "status": "Saved",
+      "savedAt": "2026-08-14T03:16:22.676Z",
+      "userId": "mock_uid",
+      "uid": "0.6033276085089372"
+    },
+    {
+      "title": "Data Analyst",
+      "company": "Tech Startups, E-commerce, Consulting Firms",
+      "matchScore": 57,
+      "location": "Hybrid",
+      "type": "Full-time",
+      "skills": [
+        "SQL",
+        "Excel",
+        "Data Visualization (e.g., Tableau/Power BI)"
+      ],
+      "whyMatch": "This role directly leverages strong SQL skills for data extraction, analysis, and generating actionable insights, which is a common and essential progression for 2 years of SQL experience in almost any industry.",
+      "applyTip": "Highlight practical projects where you transformed raw data into business recommendations or solved a specific business problem using SQL.",
+      "matchedSkills": [
+        "Sql"
+      ],
+      "missingSkills": [
+        "Excel",
+        "Data Visualization (e.g., Tableau/power Bi)"
+      ],
+      "learningResources": [],
+      "distanceCategory": "Farther Away",
+      "id": "0.7910217334914782",
+      "status": "Saved",
+      "savedAt": "2026-08-14T04:36:51.856Z",
+      "userId": "mock_uid",
+      "uid": "0.7910217334914782"
+    },
+    {
+      "title": "Data Analyst",
+      "company": "Tech Startups, E-commerce, Consulting Firms",
+      "matchScore": 57,
+      "location": "Hybrid",
+      "type": "Full-time",
+      "skills": [
+        "SQL",
+        "Excel",
+        "Data Visualization (e.g., Tableau/Power BI)"
+      ],
+      "whyMatch": "This role directly leverages strong SQL skills for data extraction, analysis, and generating actionable insights, which is a common and essential progression for 2 years of SQL experience in almost any industry.",
+      "applyTip": "Highlight practical projects where you transformed raw data into business recommendations or solved a specific business problem using SQL.",
+      "matchedSkills": [
+        "Sql"
+      ],
+      "missingSkills": [
+        "Excel",
+        "Data Visualization (e.g., Tableau/power Bi)"
+      ],
+      "learningResources": [],
+      "distanceCategory": "Farther Away",
+      "id": "0.15101385752951835",
+      "status": "Saved",
+      "savedAt": "2026-08-14T04:37:44.010Z",
+      "userId": "mock_uid",
+      "uid": "0.15101385752951835"
+    }
+  ]
+}
