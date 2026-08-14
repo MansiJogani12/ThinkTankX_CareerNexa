@@ -25,7 +25,7 @@ const CAREER_OPTIONS = [
 
 export default function CareerSimulatorPage() {
   const [selectedRole, setSelectedRole] = useState("Full Stack Developer");
-  const [userSkills, setUserSkills] = useState<string[]>(["JavaScript", "React", "Python", "SQL"]);
+  const [userSkills, setUserSkills] = useState<string[]>([]);
   const [simulation, setSimulation] = useState<SimulationResult | null>(null);
 
   useEffect(() => {

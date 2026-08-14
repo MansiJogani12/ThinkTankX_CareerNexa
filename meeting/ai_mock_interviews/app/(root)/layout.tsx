@@ -14,18 +14,18 @@ const Layout = async ({ children }: { children: ReactNode }) => {
   return (
     <div className="root-layout">
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-[#0B0F19]/80 backdrop-blur-md border-b border-white/10">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 shrink-0 w-48">
           <Image src="/logo.svg" alt="CareerNexa Logo" width={32} height={32} />
           <h2 className="text-violet-500 font-bold text-xl">CareerNexa</h2>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-5 flex-wrap">
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-x-4 gap-y-2 flex-wrap px-4">
           <Link href="/analyse" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Analyse</Link>
           <Link href="/skill-gap" className="text-sm font-medium text-white/70 hover:text-white transition-colors">SkillGap</Link>
           <Link href="/roadmap" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Roadmap</Link>
           <Link href="/recommendations" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Recommendations</Link>
           <Link href="/simulator" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Simulator</Link>
-          <Link href="/dashboard" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Dashboard</Link>
+
           <Link href="/job-matcher" className="text-sm font-medium text-white/70 hover:text-white transition-colors">JobMatcher</Link>
           <Link href="/resume-builder" className="text-sm font-medium text-white/70 hover:text-white transition-colors">ResumeBuilder</Link>
           <Link href="/interview-prep" className="text-sm font-medium text-white/70 hover:text-white transition-colors">InterviewPrep</Link>
@@ -34,7 +34,9 @@ const Layout = async ({ children }: { children: ReactNode }) => {
         </div>
 
         {/* User Profile & Logout Component in Corner */}
-        <UserNav user={user} />
+        <div className="shrink-0 w-48 flex justify-end">
+          <UserNav user={user} />
+        </div>
       </nav>
 
       {children}

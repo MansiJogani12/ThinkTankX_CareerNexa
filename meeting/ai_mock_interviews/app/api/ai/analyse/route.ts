@@ -114,33 +114,12 @@ export async function POST(req: NextRequest) {
         };
       }
     } catch (err) {
-      console.warn("Gemini API failed, using fallback mock data", err);
-      // Realistic mock extraction based on standard profile
-      jsonResponse = {
-        skillsExtracted: {
-          technicalSkills: ["Frontend Development", "React State Management", "Tailwind CSS Layouts", "API Integration", "Webpack Build Systems"],
-          softSkills: ["Team Collaboration", "Problem Solving", "Adaptability", "Active Listening"],
-          toolsFrameworks: ["React.js", "Next.js", "Git", "Webpack", "Vite", "ESLint"],
-          programmingLanguages: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
-          certifications: ["Meta Frontend Developer Professional Certificate"],
-          experienceLevel: "Mid",
-          experience: [{ company: "Tech Corp", title: "Frontend Developer", dates: "2021-2023" }],
-          education: [{ institution: "University of Tech", degree: "B.S. Computer Science" }],
-          projects: [
-            {
-              name: "E-Commerce Admin Dashboard",
-              description: "Built a robust administrative dashboard using React, Tailwind CSS, and Recharts."
-            }
-          ]
-        },
-        rawTextSummary: "Your resume is generally ATS-friendly but needs more targeted keywords to pass higher thresholds."
-      };
-      
-      const atsData = computeDetailedATSAnalysis(jsonResponse.skillsExtracted);
-      jsonResponse = {
-        ...jsonResponse,
-        ...atsData
-      };
+      console.error("Gemini API failed for resume analysis:", err);
+      // Do NOT save fake/mock data to Firestore — return an error so the user retries
+      return NextResponse.json(
+        { message: "Resume analysis failed. Please try again in a moment." },
+        { status: 503 }
+      );
     }
 
     // Save the normalized skill profile to Firestore under user profile

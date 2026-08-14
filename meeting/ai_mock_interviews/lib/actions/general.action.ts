@@ -141,7 +141,7 @@ export async function createFeedback(params: CreateFeedbackParams) {
       const userTurns = transcript.filter((t: any) => t.role === "user");
       const totalWords = userTurns.reduce((acc: number, t: any) => acc + (t.content ? t.content.split(/\s+/).length : 0), 0);
       const avgWordLength = userTurns.length > 0 ? Math.round(totalWords / userTurns.length) : 0;
-      
+
       // Calculate dynamic scores based on answer depth and completion
       const commScore = Math.min(95, Math.max(65, 60 + Math.min(25, avgWordLength * 2)));
       const techScore = Math.min(92, Math.max(60, 58 + userTurns.length * 6));
@@ -377,12 +377,32 @@ export async function getInterviewsByUserId(
   })) as Interview[];
 }
 
+// Helper to detect if the profile is the hardcoded legacy fake data
+function isFakeSkillProfile(sp: any) {
+  if (!sp) return false;
+  // Lenient check: if it contains the exact specific string from the old fallback
+  const hasFakeLang = sp.programmingLanguages && 
+    sp.programmingLanguages.includes("JavaScript") &&
+    sp.programmingLanguages.includes("HTML5");
+  
+  const hasFakeTech = sp.technicalSkills && 
+    sp.technicalSkills.includes("Frontend Development") && 
+    sp.technicalSkills.includes("React State Management");
+
+  return !!(hasFakeLang || hasFakeTech);
+}
+
 export async function getUserSkillProfile() {
   const { getCurrentUser } = await import("./auth.action");
   try {
     const user = await getCurrentUser();
-    if (!user) return null;
-    return user.skillProfile || null;
+    if (!user || !user.skillProfile) return null;
+    
+    if (isFakeSkillProfile(user.skillProfile)) {
+      return null;
+    }
+    
+    return user.skillProfile;
   } catch (error) {
     console.error("Error fetching user skill profile:", error);
     return null;
@@ -436,10 +456,10 @@ export async function toggleRoadmapItemCompletion(itemIndex: number, completed: 
   try {
     const user = await getCurrentUser();
     if (!user) return { success: false, message: "Unauthorized" };
-    
+
     const userDoc = await db.collection("users").doc(user.id).get();
     if (!userDoc.exists) return { success: false, message: "User not found" };
-    
+
     const userData = userDoc.data();
     const activeRoadmap = userData?.activeRoadmap || [];
     if (activeRoadmap[itemIndex]) {
@@ -476,19 +496,31 @@ export async function getDashboardStats() {
   try {
     const user = await getCurrentUser();
     if (!user) return null;
-    
+
+    // Robust resume check: skillProfile must contain actual skill data, not just the key existing.
+    // AND it must not be the legacy fake fallback data.
+    const sp = user.skillProfile;
+    const hasResumeData = !!(
+      sp &&
+      !isFakeSkillProfile(sp) &&
+      (
+        (sp.technicalSkills && sp.technicalSkills.length > 0) ||
+        (sp.programmingLanguages && sp.programmingLanguages.length > 0) ||
+        (sp.toolsFrameworks && sp.toolsFrameworks.length > 0) ||
+        (sp.experienceLevel && sp.experienceLevel.trim() !== "")
+      )
+    );
+
     const interviews = await getInterviewsByUserId(user.id);
     const completedInterviews = interviews || [];
-    
+
     let totalScoreSum = 0;
     let feedbackCount = 0;
-    
+
     if (completedInterviews.length > 0) {
       const interviewIds = completedInterviews.map((i: any) => i.id);
-      const feedbackSnapshot = await db
-        .collection("feedback")
-        .get();
-        
+      const feedbackSnapshot = await db.collection("feedback").get();
+
       feedbackSnapshot.docs.forEach((doc: any) => {
         const data = doc.data();
         if (interviewIds.includes(data.interviewId)) {
@@ -497,37 +529,55 @@ export async function getDashboardStats() {
         }
       });
     }
-    
+
     const averageInterviewScore = feedbackCount > 0 ? Math.round(totalScoreSum / feedbackCount) : 0;
-    
-    return {
+
+    // Base stats — always returned, never with fake defaults
+    const baseStats = {
+      hasResumeData,
       userProfile: {
         name: user.name,
         email: user.email,
-        experienceLevel: user.skillProfile?.experienceLevel || "Mid",
-        skillsCount: (user.skillProfile?.technicalSkills?.length || 0) + (user.skillProfile?.programmingLanguages?.length || 0),
-        projectsCount: user.skillProfile?.projects?.length || 0,
-        certificationsCount: user.skillProfile?.certifications?.length || 0,
+        experienceLevel: sp?.experienceLevel || "",
+        skillsCount: (sp?.technicalSkills?.length || 0) + (sp?.programmingLanguages?.length || 0),
+        projectsCount: sp?.projects?.length || 0,
+        certificationsCount: sp?.certifications?.length || 0,
       },
       activeRoadmap: user.activeRoadmap || [],
       atsAnalysis: user.atsAnalysis || null,
       weeklyStudyHours: user.weeklyStudyHours || [0, 0, 0, 0, 0, 0, 0],
       interviewCount: completedInterviews.length,
       averageInterviewScore,
-      careerTwin: {
-        targetRole: user.skillProfile?.targetRole || "Software Developer",
-        topSkills: (user.skillProfile?.technicalSkills || []).slice(0, 3).map((s: string) => ({ name: s, level: Math.floor(Math.random() * 20) + 70 })),
-        needsImprovement: ["System Design", "Cloud Architecture"].map((s: string) => ({ name: s, level: Math.floor(Math.random() * 20) + 30 })),
-        strongestArea: "Core Programming Fundamentals",
+      careerTwin: null as any,
+      nextActions: null as any,
+    };
+
+    // Only populate careerTwin & nextActions if resume was actually uploaded
+    if (hasResumeData) {
+      const topSkills = (sp?.technicalSkills || [])
+        .slice(0, 3)
+        .map((s: string) => ({ name: s, level: Math.floor(Math.random() * 20) + 70 }));
+
+      baseStats.careerTwin = {
+        targetRole: (sp as any)?.targetRole || "",
+        topSkills,
+        needsImprovement: ["System Design", "Cloud Architecture"].map((s: string) => ({
+          name: s,
+          level: Math.floor(Math.random() * 20) + 30,
+        })),
+        strongestArea: sp?.technicalSkills?.[0] || "",
         biggestGap: "Advanced System Design",
-        careerDirection: "Backend Development"
-      },
-      nextActions: [
+        careerDirection: "Backend Development",
+      };
+
+      baseStats.nextActions = [
         { title: "Learn System Design", priority: "HIGH", why: "Required for senior backend roles and missing in your profile." },
         { title: "Build a full-stack project", priority: "HIGH", why: "You need practical project experience." },
-        { title: "Practice Architecture Interview", priority: "MEDIUM", why: "Interview results show improvement needed here." }
-      ]
-    };
+        { title: "Practice Architecture Interview", priority: "MEDIUM", why: "Interview results show improvement needed here." },
+      ];
+    }
+
+    return baseStats;
   } catch (error) {
     console.error("Error compiling dashboard stats:", error);
     return null;

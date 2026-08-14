@@ -7,18 +7,19 @@ export function calculateCareerReadiness(profile: {
   jobMatchStats?: { topMatchScore?: number };
   roadmapProgress?: { percentage?: number };
 }): number {
-  const resumeScore = profile.atsScore || 75; // weight 20%
+  // Only use real values — no fake fallbacks that inflate the score
+  const resumeScore = profile.atsScore || 0;         // weight 20%
   const skillsCount = profile.skills?.length || 0;
-  const skillsScore = Math.min(100, Math.max(50, skillsCount * 12)); // weight 20%
-  
+  const skillsScore = skillsCount > 0 ? Math.min(100, skillsCount * 12) : 0; // weight 20%
+
   const projectsCount = profile.projects?.length || 0;
-  const projectsScore = projectsCount > 0 ? Math.min(100, 60 + projectsCount * 15) : 55; // weight 15%
-  
+  const projectsScore = projectsCount > 0 ? Math.min(100, 60 + projectsCount * 15) : 0; // weight 15%
+
   const certsCount = profile.certifications?.length || 0;
-  const certsScore = certsCount > 0 ? Math.min(100, 65 + certsCount * 15) : 50; // weight 10%
-  
-  const interviewScore = profile.interviewStats?.averageScore || 76; // weight 20%
-  const jobMatchScore = profile.jobMatchStats?.topMatchScore || 78; // weight 15%
+  const certsScore = certsCount > 0 ? Math.min(100, 65 + certsCount * 15) : 0; // weight 10%
+
+  const interviewScore = profile.interviewStats?.averageScore || 0; // weight 20%
+  const jobMatchScore = profile.jobMatchStats?.topMatchScore || 0;  // weight 15%
 
   const weightedScore = Math.round(
     resumeScore * 0.20 +
@@ -33,15 +34,15 @@ export function calculateCareerReadiness(profile: {
 }
 
 export function getReadinessBreakdown(profile: any) {
-  const resumeScore = profile.atsScore || 75;
+  const resumeScore = profile.atsScore || 0;
   const skillsCount = profile.skills?.length || 0;
-  const skillsScore = Math.min(100, Math.max(50, skillsCount * 12));
+  const skillsScore = skillsCount > 0 ? Math.min(100, skillsCount * 12) : 0;
   const projectsCount = profile.projects?.length || 0;
-  const projectsScore = projectsCount > 0 ? Math.min(100, 60 + projectsCount * 15) : 55;
+  const projectsScore = projectsCount > 0 ? Math.min(100, 60 + projectsCount * 15) : 0;
   const certsCount = profile.certifications?.length || 0;
-  const certsScore = certsCount > 0 ? Math.min(100, 65 + certsCount * 15) : 50;
-  const interviewScore = profile.interviewStats?.averageScore || 76;
-  const jobMatchScore = profile.jobMatchStats?.topMatchScore || 78;
+  const certsScore = certsCount > 0 ? Math.min(100, 65 + certsCount * 15) : 0;
+  const interviewScore = profile.interviewStats?.averageScore || 0;
+  const jobMatchScore = profile.jobMatchStats?.topMatchScore || 0;
 
   return [
     { label: "Resume ATS", score: resumeScore, weight: "20%" },

@@ -100,9 +100,11 @@ const DEFAULT_ANALYSIS_RESULT: Analysis = {
 };
 
 export default function AnalysePage() {
-  const [result, setResult] = useState<Analysis | null>(DEFAULT_ANALYSIS_RESULT);
+  // Start with null so no fake data is shown before upload
+  const [result, setResult] = useState<Analysis | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [hasUploaded, setHasUploaded] = useState(false);
 
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -133,6 +135,7 @@ export default function AnalysePage() {
       }
 
       setResult(data);
+      setHasUploaded(true);
     } catch (error: any) {
       setError(error.message || "Analysis Failed. Please try again.");
     } finally {
@@ -161,7 +164,7 @@ export default function AnalysePage() {
           </div>
           <div className="text-center">
             <p className="font-semibold text-white/80 text-base">
-              Analyse another resume
+              {hasUploaded ? "Analyse another resume" : "Upload your resume"}
             </p>
             <p className="text-white/40 text-sm mt-0.5">
               or click to browse • PDF only • max 5MB

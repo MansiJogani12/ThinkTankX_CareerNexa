@@ -9,21 +9,50 @@ interface CareerTwinProps {
 }
 
 export function CareerTwin({ profile }: CareerTwinProps) {
-  const readiness = profile?.careerReadiness || 78;
-  const targetRole = profile?.targetRole || "Software Developer";
-  
+  // If no profile (no resume uploaded), show upload prompt
+  if (!profile) {
+    return (
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-6 backdrop-blur-xl">
+        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+          <div className="w-10 h-10 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+            <Sparkles size={20} />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">AI Career Twin</h3>
+            <p className="text-xs text-white/50">Real-time Resume &amp; Skill Profile Analysis</p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-4 py-10 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-dashed border-indigo-500/30 flex items-center justify-center">
+            <Target size={28} className="text-indigo-400" />
+          </div>
+          <div>
+            <p className="text-white font-semibold">No Resume Data Yet</p>
+            <p className="text-white/50 text-sm mt-1">Upload your resume to unlock your personalized AI Career Twin profile.</p>
+          </div>
+          <Link
+            href="/analyse"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all flex items-center gap-2 shadow-lg shadow-indigo-600/30"
+          >
+            <ArrowUpRight size={16} /> Upload Resume
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const readiness = profile.careerReadiness;
+  const targetRole = profile.targetRole;
+
   // Extract skills from resume skill profile
-  const resumeSkills = profile?.skillProfile?.technicalSkills || profile?.skillProfile?.programmingLanguages || [];
-  const topSkills = resumeSkills.length > 0 ? resumeSkills.slice(0, 4) : ["JavaScript", "TypeScript", "React.js", "Next.js"];
+  const topSkills = profile.skills?.slice(0, 4) || [];
 
-  const strongestArea = profile?.strongestArea || "Core Programming Fundamentals";
-  const biggestGap = profile?.biggestGap || "Advanced System Design";
+  const strongestArea = profile.strongestArea || (profile.skills?.[0] ?? null);
+  const biggestGap = profile.biggestGap || null;
 
-  // Needs Improvement breakdown as requested
-  const needsImprovement = [
-    { area: "System Design", score: 33, status: "Critical Priority" },
-    { area: "Cloud Architecture", score: 46, status: "Needs Practice" },
-  ];
+  // No hardcoded fake improvement areas — only show real data from profile
+  const needsImprovement: { area: string; score: number; status: string }[] = [];
+
 
   return (
     <div className="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-6 backdrop-blur-xl">
@@ -70,70 +99,78 @@ export function CareerTwin({ profile }: CareerTwinProps) {
             </div>
           </div>
 
-          {/* Needs Improvement Bars */}
-          <div className="flex flex-col gap-2.5 border-t border-white/5 pt-3">
-            <p className="text-[10px] text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1">
-              <AlertTriangle size={11} /> Needs Improvement Areas
-            </p>
-            {needsImprovement.map((item) => (
-              <div key={item.area} className="flex flex-col gap-1">
-                <div className="flex justify-between text-xs">
-                  <span className="text-white/80 font-medium">{item.area}</span>
-                  <span className="text-amber-400 font-bold">{item.score}% ({item.status})</span>
+          {/* Needs Improvement Bars — only shown when real data exists */}
+          {needsImprovement.length > 0 && (
+            <div className="flex flex-col gap-2.5 border-t border-white/5 pt-3">
+              <p className="text-[10px] text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1">
+                <AlertTriangle size={11} /> Needs Improvement Areas
+              </p>
+              {needsImprovement.map((item) => (
+                <div key={item.area} className="flex flex-col gap-1">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-white/80 font-medium">{item.area}</span>
+                    <span className="text-amber-400 font-bold">{item.score}% ({item.status})</span>
+                  </div>
+                  <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-amber-500 to-rose-500 rounded-full transition-all duration-500"
+                      style={{ width: `${item.score}%` }}
+                    />
+                  </div>
                 </div>
-                <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-amber-500 to-rose-500 rounded-full transition-all duration-500"
-                    style={{ width: `${item.score}%` }}
-                  />
-                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Highlights Grid — only shown when real values exist */}
+      {(strongestArea || biggestGap) && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-white/10 pt-4">
+          {/* Strongest Area */}
+          {strongestArea && (
+            <div className="bg-emerald-500/[0.04] border border-emerald-500/20 p-4 rounded-2xl flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
+                <Trophy size={18} />
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Highlights Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-white/10 pt-4">
-        {/* Strongest Area */}
-        <div className="bg-emerald-500/[0.04] border border-emerald-500/20 p-4 rounded-2xl flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
-            <Trophy size={18} />
-          </div>
-          <div className="min-w-0 flex-1">
-            <p className="text-[10px] text-emerald-300 font-bold uppercase tracking-widest">Strongest Area</p>
-            <p className="text-xs font-bold text-white truncate mt-0.5">{strongestArea}</p>
-          </div>
-        </div>
-
-        {/* Biggest Gap */}
-        <div className="bg-rose-500/[0.04] border border-rose-500/20 p-4 rounded-2xl flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-rose-500/20 text-rose-400 shrink-0">
-            <AlertTriangle size={18} />
-          </div>
-          <div className="min-w-0 flex-1">
-            <p className="text-[10px] text-rose-300 font-bold uppercase tracking-widest">Biggest Gap</p>
-            <p className="text-xs font-bold text-white truncate mt-0.5">{biggestGap}</p>
-          </div>
-        </div>
-
-        {/* Next Action Link */}
-        <Link
-          href={`/skill-gap`}
-          className="bg-indigo-600/10 hover:bg-indigo-600/20 border border-indigo-500/30 p-4 rounded-2xl flex items-center justify-between gap-3 text-indigo-300 transition-colors group sm:col-span-2 lg:col-span-1"
-        >
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="p-2.5 rounded-xl bg-indigo-500/20 text-indigo-400 shrink-0">
-              <Compass size={18} />
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] text-emerald-300 font-bold uppercase tracking-widest">Strongest Area</p>
+                <p className="text-xs font-bold text-white truncate mt-0.5">{strongestArea}</p>
+              </div>
             </div>
-            <div className="min-w-0">
-              <p className="text-[10px] text-indigo-300 font-bold uppercase tracking-widest">Career Guidance</p>
-              <p className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors">Run Skill Gap Analysis</p>
+          )}
+
+          {/* Biggest Gap */}
+          {biggestGap && (
+            <div className="bg-rose-500/[0.04] border border-rose-500/20 p-4 rounded-2xl flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-rose-500/20 text-rose-400 shrink-0">
+                <AlertTriangle size={18} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] text-rose-300 font-bold uppercase tracking-widest">Biggest Gap</p>
+                <p className="text-xs font-bold text-white truncate mt-0.5">{biggestGap}</p>
+              </div>
             </div>
-          </div>
-          <ArrowUpRight size={16} className="text-indigo-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-        </Link>
-      </div>
+          )}
+
+          {/* Next Action Link */}
+          <Link
+            href={`/skill-gap`}
+            className="bg-indigo-600/10 hover:bg-indigo-600/20 border border-indigo-500/30 p-4 rounded-2xl flex items-center justify-between gap-3 text-indigo-300 transition-colors group sm:col-span-2 lg:col-span-1"
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="p-2.5 rounded-xl bg-indigo-500/20 text-indigo-400 shrink-0">
+                <Compass size={18} />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] text-indigo-300 font-bold uppercase tracking-widest">Career Guidance</p>
+                <p className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors">Run Skill Gap Analysis</p>
+              </div>
+            </div>
+            <ArrowUpRight size={16} className="text-indigo-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

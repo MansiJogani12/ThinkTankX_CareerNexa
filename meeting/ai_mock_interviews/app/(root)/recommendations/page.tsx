@@ -84,7 +84,7 @@ export default function RecommendationsPage() {
   const [generating, setGenerating] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState("");
-  const [recommendations, setRecommendations] = useState<RecommendationItem[] | null>(DEFAULT_RECOMMENDATIONS);
+  const [recommendations, setRecommendations] = useState<RecommendationItem[] | null>(null);
 
   useEffect(() => {
     let customRole = "";

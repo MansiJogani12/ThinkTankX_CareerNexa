@@ -19,7 +19,39 @@ interface NextBestActionsProps {
 }
 
 export function NextBestActions({ profile }: NextBestActionsProps) {
-  const targetRole = profile?.targetRole || "Software Developer";
+  // If no profile (no resume uploaded), show upload prompt
+  if (!profile) {
+    return (
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-6 backdrop-blur-xl">
+        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+          <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <Zap size={20} />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Your Next High-Impact Actions</h3>
+            <p className="text-xs text-white/50">Personalized steps to maximize job market readiness</p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-4 py-10 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-dashed border-amber-500/30 flex items-center justify-center">
+            <BookOpen size={28} className="text-amber-400" />
+          </div>
+          <div>
+            <p className="text-white font-semibold">Actions Locked</p>
+            <p className="text-white/50 text-sm mt-1">Upload your resume to get personalized, AI-driven action steps tailored to your profile.</p>
+          </div>
+          <Link
+            href="/analyse"
+            className="bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all flex items-center gap-2 shadow-lg shadow-amber-500/30"
+          >
+            <ArrowRight size={16} /> Upload Resume to Unlock
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const targetRole = profile.targetRole;
   
   const actions: ActionItem[] = [
     {
