@@ -3,6 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { verifyAuth, incrementRequestCount } from "@/lib/verifyAuth";
 import { generateInterviewPrompt } from "@/lib/prompt";
 
+const isDev = process.env.NODE_ENV === "development";
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY! });
 
 export async function POST(req: NextRequest) {
@@ -10,12 +11,6 @@ export async function POST(req: NextRequest) {
     const { user, error } = await verifyAuth(req);
     if (error || !user) {
       return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
-    const isDev = process.env.NODE_ENV === "development";
-
-    if (!isDev && !user.canMakeRequest()) {
-      return NextResponse.json({ message: "Upgrade Your plan to continue" }, { status: 403 });
     }
 
     const { mode, round, skills, experience, pdfBase64, existingQuestions } = await req.json();
